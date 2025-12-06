@@ -1,0 +1,47 @@
+[0.108s] Invoking command in '/home/ros2_ws/build/zed_robot_integration': AMENT_PREFIX_PATH=/home/ros2_ws/install/zed_wrapper:/home/ros2_ws/install/zed_components:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/ros2_ws/install/zed_wrapper:/home/ros2_ws/install/zed_components:/opt/ros/humble LD_LIBRARY_PATH=/home/ros2_ws/install/zed_components/lib:${LD_LIBRARY_PATH} /usr/bin/cmake /home/ros2_ws/src/zed-ros2-examples/tutorials/zed_robot_integration -DCMAKE_INSTALL_PREFIX=/home/ros2_ws/install/zed_robot_integration
+[0.371s] -- The C compiler identification is GNU 11.4.0
+[0.654s] -- The CXX compiler identification is GNU 11.4.0
+[0.682s] -- Detecting C compiler ABI info
+[1.069s] -- Detecting C compiler ABI info - done
+[1.096s] -- Check for working C compiler: /usr/bin/cc - skipped
+[1.097s] -- Detecting C compile features
+[1.097s] -- Detecting C compile features - done
+[1.121s] -- Detecting CXX compiler ABI info
+[1.615s] -- Detecting CXX compiler ABI info - done
+[1.631s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[1.632s] -- Detecting CXX compile features
+[1.633s] -- Detecting CXX compile features - done
+[1.640s] -- Found ament_cmake: 1.3.12 (/opt/ros/humble/share/ament_cmake/cmake)
+[2.263s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[2.825s] -- Configuring done
+[2.841s] -- Generating done
+[2.842s] -- Build files have been written to: /home/ros2_ws/build/zed_robot_integration
+[2.851s] Invoked command in '/home/ros2_ws/build/zed_robot_integration' returned '0': AMENT_PREFIX_PATH=/home/ros2_ws/install/zed_wrapper:/home/ros2_ws/install/zed_components:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/ros2_ws/install/zed_wrapper:/home/ros2_ws/install/zed_components:/opt/ros/humble LD_LIBRARY_PATH=/home/ros2_ws/install/zed_components/lib:${LD_LIBRARY_PATH} /usr/bin/cmake /home/ros2_ws/src/zed-ros2-examples/tutorials/zed_robot_integration -DCMAKE_INSTALL_PREFIX=/home/ros2_ws/install/zed_robot_integration
+[2.867s] Invoking command in '/home/ros2_ws/build/zed_robot_integration': AMENT_PREFIX_PATH=/home/ros2_ws/install/zed_wrapper:/home/ros2_ws/install/zed_components:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/ros2_ws/install/zed_wrapper:/home/ros2_ws/install/zed_components:/opt/ros/humble LD_LIBRARY_PATH=/home/ros2_ws/install/zed_components/lib:${LD_LIBRARY_PATH} /usr/bin/cmake --build /home/ros2_ws/build/zed_robot_integration -- -j6 -l6
+[3.013s] Invoked command in '/home/ros2_ws/build/zed_robot_integration' returned '0': AMENT_PREFIX_PATH=/home/ros2_ws/install/zed_wrapper:/home/ros2_ws/install/zed_components:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/ros2_ws/install/zed_wrapper:/home/ros2_ws/install/zed_components:/opt/ros/humble LD_LIBRARY_PATH=/home/ros2_ws/install/zed_components/lib:${LD_LIBRARY_PATH} /usr/bin/cmake --build /home/ros2_ws/build/zed_robot_integration -- -j6 -l6
+[3.029s] Invoking command in '/home/ros2_ws/build/zed_robot_integration': AMENT_PREFIX_PATH=/home/ros2_ws/install/zed_wrapper:/home/ros2_ws/install/zed_components:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/ros2_ws/install/zed_wrapper:/home/ros2_ws/install/zed_components:/opt/ros/humble LD_LIBRARY_PATH=/home/ros2_ws/install/zed_components/lib:${LD_LIBRARY_PATH} /usr/bin/cmake --install /home/ros2_ws/build/zed_robot_integration
+[3.063s] -- Install configuration: ""
+[3.063s] -- Installing: /home/ros2_ws/install/zed_robot_integration/share/zed_robot_integration//launch
+[3.064s] -- Installing: /home/ros2_ws/install/zed_robot_integration/share/zed_robot_integration//launch/view_mono_zed.launch.py
+[3.068s] -- Installing: /home/ros2_ws/install/zed_robot_integration/share/zed_robot_integration//launch/view_dual_zed.launch.py
+[3.069s] -- Installing: /home/ros2_ws/install/zed_robot_integration/share/zed_robot_integration//urdf
+[3.072s] -- Installing: /home/ros2_ws/install/zed_robot_integration/share/zed_robot_integration//urdf/zed_robot_dual.urdf.xacro
+[3.073s] -- Installing: /home/ros2_ws/install/zed_robot_integration/share/zed_robot_integration//urdf/zed_robot_mono.urdf.xacro
+[3.074s] -- Installing: /home/ros2_ws/install/zed_robot_integration/share/zed_robot_integration//rviz2
+[3.075s] -- Installing: /home/ros2_ws/install/zed_robot_integration/share/zed_robot_integration//rviz2/view_config.rviz
+[3.076s] -- Installing: /home/ros2_ws/install/zed_robot_integration/share/ament_index/resource_index/package_run_dependencies/zed_robot_integration
+[3.077s] -- Installing: /home/ros2_ws/install/zed_robot_integration/share/ament_index/resource_index/parent_prefix_path/zed_robot_integration
+[3.077s] -- Installing: /home/ros2_ws/install/zed_robot_integration/share/zed_robot_integration/environment/ament_prefix_path.sh
+[3.078s] -- Installing: /home/ros2_ws/install/zed_robot_integration/share/zed_robot_integration/environment/ament_prefix_path.dsv
+[3.078s] -- Installing: /home/ros2_ws/install/zed_robot_integration/share/zed_robot_integration/environment/path.sh
+[3.078s] -- Installing: /home/ros2_ws/install/zed_robot_integration/share/zed_robot_integration/environment/path.dsv
+[3.079s] -- Installing: /home/ros2_ws/install/zed_robot_integration/share/zed_robot_integration/local_setup.bash
+[3.079s] -- Installing: /home/ros2_ws/install/zed_robot_integration/share/zed_robot_integration/local_setup.sh
+[3.081s] -- Installing: /home/ros2_ws/install/zed_robot_integration/share/zed_robot_integration/local_setup.zsh
+[3.082s] -- Installing: /home/ros2_ws/install/zed_robot_integration/share/zed_robot_integration/local_setup.dsv
+[3.083s] -- Installing: /home/ros2_ws/install/zed_robot_integration/share/zed_robot_integration/package.dsv
+[3.084s] -- Installing: /home/ros2_ws/install/zed_robot_integration/share/ament_index/resource_index/packages/zed_robot_integration
+[3.085s] -- Installing: /home/ros2_ws/install/zed_robot_integration/share/zed_robot_integration/cmake/zed_robot_integrationConfig.cmake
+[3.085s] -- Installing: /home/ros2_ws/install/zed_robot_integration/share/zed_robot_integration/cmake/zed_robot_integrationConfig-version.cmake
+[3.086s] -- Installing: /home/ros2_ws/install/zed_robot_integration/share/zed_robot_integration/package.xml
+[3.107s] Invoked command in '/home/ros2_ws/build/zed_robot_integration' returned '0': AMENT_PREFIX_PATH=/home/ros2_ws/install/zed_wrapper:/home/ros2_ws/install/zed_components:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/ros2_ws/install/zed_wrapper:/home/ros2_ws/install/zed_components:/opt/ros/humble LD_LIBRARY_PATH=/home/ros2_ws/install/zed_components/lib:${LD_LIBRARY_PATH} /usr/bin/cmake --install /home/ros2_ws/build/zed_robot_integration

@@ -1,0 +1,49 @@
+[0.133s] Invoking command in '/home/ros2_ws/build/zed_isaac_ros_multi_camera': AMENT_PREFIX_PATH=/home/ros2_ws/install/zed_wrapper:/home/ros2_ws/install/zed_components:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/ros2_ws/install/zed_wrapper:/home/ros2_ws/install/zed_components:/opt/ros/humble LD_LIBRARY_PATH=/home/ros2_ws/install/zed_components/lib:${LD_LIBRARY_PATH} /usr/bin/cmake /home/ros2_ws/src/zed-ros2-examples/isaac_ros/zed_isaac_ros_multi_camera -DCMAKE_INSTALL_PREFIX=/home/ros2_ws/install/zed_isaac_ros_multi_camera
+[0.410s] -- The C compiler identification is GNU 11.4.0
+[0.663s] -- The CXX compiler identification is GNU 11.4.0
+[0.687s] -- Detecting C compiler ABI info
+[1.048s] -- Detecting C compiler ABI info - done
+[1.071s] -- Check for working C compiler: /usr/bin/cc - skipped
+[1.071s] -- Detecting C compile features
+[1.072s] -- Detecting C compile features - done
+[1.087s] -- Detecting CXX compiler ABI info
+[1.462s] -- Detecting CXX compiler ABI info - done
+[1.479s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[1.479s] -- Detecting CXX compile features
+[1.480s] -- Detecting CXX compile features - done
+[1.488s] -- Found ament_cmake_auto: 1.3.12 (/opt/ros/humble/share/ament_cmake_auto/cmake)
+[2.057s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[2.736s] -- Found ament_lint_auto: 0.12.14 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[2.856s] -- Added test 'copyright' to check source files copyright and LICENSE
+[2.862s] -- Added test 'flake8' to check Python code syntax and style conventions
+[2.864s] -- Added test 'lint_cmake' to check CMake code style
+[2.865s] -- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257
+[2.867s] -- Added test 'xmllint' to check XML markup files
+[2.871s] -- Configuring done
+[2.889s] -- Generating done
+[2.896s] -- Build files have been written to: /home/ros2_ws/build/zed_isaac_ros_multi_camera
+[2.930s] Invoked command in '/home/ros2_ws/build/zed_isaac_ros_multi_camera' returned '0': AMENT_PREFIX_PATH=/home/ros2_ws/install/zed_wrapper:/home/ros2_ws/install/zed_components:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/ros2_ws/install/zed_wrapper:/home/ros2_ws/install/zed_components:/opt/ros/humble LD_LIBRARY_PATH=/home/ros2_ws/install/zed_components/lib:${LD_LIBRARY_PATH} /usr/bin/cmake /home/ros2_ws/src/zed-ros2-examples/isaac_ros/zed_isaac_ros_multi_camera -DCMAKE_INSTALL_PREFIX=/home/ros2_ws/install/zed_isaac_ros_multi_camera
+[2.932s] Invoking command in '/home/ros2_ws/build/zed_isaac_ros_multi_camera': AMENT_PREFIX_PATH=/home/ros2_ws/install/zed_wrapper:/home/ros2_ws/install/zed_components:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/ros2_ws/install/zed_wrapper:/home/ros2_ws/install/zed_components:/opt/ros/humble LD_LIBRARY_PATH=/home/ros2_ws/install/zed_components/lib:${LD_LIBRARY_PATH} /usr/bin/cmake --build /home/ros2_ws/build/zed_isaac_ros_multi_camera -- -j6 -l6
+[3.085s] Invoked command in '/home/ros2_ws/build/zed_isaac_ros_multi_camera' returned '0': AMENT_PREFIX_PATH=/home/ros2_ws/install/zed_wrapper:/home/ros2_ws/install/zed_components:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/ros2_ws/install/zed_wrapper:/home/ros2_ws/install/zed_components:/opt/ros/humble LD_LIBRARY_PATH=/home/ros2_ws/install/zed_components/lib:${LD_LIBRARY_PATH} /usr/bin/cmake --build /home/ros2_ws/build/zed_isaac_ros_multi_camera -- -j6 -l6
+[3.099s] Invoking command in '/home/ros2_ws/build/zed_isaac_ros_multi_camera': AMENT_PREFIX_PATH=/home/ros2_ws/install/zed_wrapper:/home/ros2_ws/install/zed_components:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/ros2_ws/install/zed_wrapper:/home/ros2_ws/install/zed_components:/opt/ros/humble LD_LIBRARY_PATH=/home/ros2_ws/install/zed_components/lib:${LD_LIBRARY_PATH} /usr/bin/cmake --install /home/ros2_ws/build/zed_isaac_ros_multi_camera
+[3.137s] -- Install configuration: ""
+[3.137s] -- Installing: /home/ros2_ws/install/zed_isaac_ros_multi_camera/share/zed_isaac_ros_multi_camera/launch
+[3.138s] -- Installing: /home/ros2_ws/install/zed_isaac_ros_multi_camera/share/zed_isaac_ros_multi_camera/launch/zed_multi_camera.launch.py
+[3.138s] -- Installing: /home/ros2_ws/install/zed_isaac_ros_multi_camera/share/zed_isaac_ros_multi_camera/urdf
+[3.138s] -- Installing: /home/ros2_ws/install/zed_isaac_ros_multi_camera/share/zed_isaac_ros_multi_camera/urdf/zed_multi.urdf.xacro
+[3.138s] -- Installing: /home/ros2_ws/install/zed_isaac_ros_multi_camera/share/ament_index/resource_index/package_run_dependencies/zed_isaac_ros_multi_camera
+[3.138s] -- Installing: /home/ros2_ws/install/zed_isaac_ros_multi_camera/share/ament_index/resource_index/parent_prefix_path/zed_isaac_ros_multi_camera
+[3.138s] -- Installing: /home/ros2_ws/install/zed_isaac_ros_multi_camera/share/zed_isaac_ros_multi_camera/environment/ament_prefix_path.sh
+[3.138s] -- Installing: /home/ros2_ws/install/zed_isaac_ros_multi_camera/share/zed_isaac_ros_multi_camera/environment/ament_prefix_path.dsv
+[3.139s] -- Installing: /home/ros2_ws/install/zed_isaac_ros_multi_camera/share/zed_isaac_ros_multi_camera/environment/path.sh
+[3.139s] -- Installing: /home/ros2_ws/install/zed_isaac_ros_multi_camera/share/zed_isaac_ros_multi_camera/environment/path.dsv
+[3.139s] -- Installing: /home/ros2_ws/install/zed_isaac_ros_multi_camera/share/zed_isaac_ros_multi_camera/local_setup.bash
+[3.139s] -- Installing: /home/ros2_ws/install/zed_isaac_ros_multi_camera/share/zed_isaac_ros_multi_camera/local_setup.sh
+[3.139s] -- Installing: /home/ros2_ws/install/zed_isaac_ros_multi_camera/share/zed_isaac_ros_multi_camera/local_setup.zsh
+[3.139s] -- Installing: /home/ros2_ws/install/zed_isaac_ros_multi_camera/share/zed_isaac_ros_multi_camera/local_setup.dsv
+[3.142s] -- Installing: /home/ros2_ws/install/zed_isaac_ros_multi_camera/share/zed_isaac_ros_multi_camera/package.dsv
+[3.143s] -- Installing: /home/ros2_ws/install/zed_isaac_ros_multi_camera/share/ament_index/resource_index/packages/zed_isaac_ros_multi_camera
+[3.144s] -- Installing: /home/ros2_ws/install/zed_isaac_ros_multi_camera/share/zed_isaac_ros_multi_camera/cmake/zed_isaac_ros_multi_cameraConfig.cmake
+[3.144s] -- Installing: /home/ros2_ws/install/zed_isaac_ros_multi_camera/share/zed_isaac_ros_multi_camera/cmake/zed_isaac_ros_multi_cameraConfig-version.cmake
+[3.147s] -- Installing: /home/ros2_ws/install/zed_isaac_ros_multi_camera/share/zed_isaac_ros_multi_camera/package.xml
+[3.158s] Invoked command in '/home/ros2_ws/build/zed_isaac_ros_multi_camera' returned '0': AMENT_PREFIX_PATH=/home/ros2_ws/install/zed_wrapper:/home/ros2_ws/install/zed_components:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/ros2_ws/install/zed_wrapper:/home/ros2_ws/install/zed_components:/opt/ros/humble LD_LIBRARY_PATH=/home/ros2_ws/install/zed_components/lib:${LD_LIBRARY_PATH} /usr/bin/cmake --install /home/ros2_ws/build/zed_isaac_ros_multi_camera

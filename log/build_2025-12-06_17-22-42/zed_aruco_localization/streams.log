@@ -1,0 +1,101 @@
+[0.061s] Invoking command in '/home/ros2_ws/build/zed_aruco_localization': AMENT_PREFIX_PATH=/home/ros2_ws/install/zed_components:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/ros2_ws/install/zed_components:/opt/ros/humble LD_LIBRARY_PATH=/home/ros2_ws/install/zed_components/lib:${LD_LIBRARY_PATH} /usr/bin/cmake /home/ros2_ws/src/zed-ros2-examples/examples/zed_aruco_localization -DCMAKE_INSTALL_PREFIX=/home/ros2_ws/install/zed_aruco_localization
+[0.234s] -- The C compiler identification is GNU 11.4.0
+[0.418s] -- The CXX compiler identification is GNU 11.4.0
+[0.442s] -- Detecting C compiler ABI info
+[0.660s] -- Detecting C compiler ABI info - done
+[0.685s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.686s] -- Detecting C compile features
+[0.687s] -- Detecting C compile features - done
+[0.698s] -- Detecting CXX compiler ABI info
+[0.941s] -- Detecting CXX compiler ABI info - done
+[0.961s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.962s] -- Detecting CXX compile features
+[0.963s] -- Detecting CXX compile features - done
+[0.978s] -- Found OpenCV: /usr (found suitable version "4.8.0", minimum required is "4") 
+[0.987s] -- Looking for sgemm_
+[1.198s] -- Looking for sgemm_ - not found
+[1.202s] -- Looking for pthread.h
+[1.444s] -- Looking for pthread.h - found
+[1.445s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[1.667s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+[1.670s] -- Found Threads: TRUE  
+[1.745s] -- Looking for sgemm_
+[2.087s] -- Looking for sgemm_ - found
+[2.088s] -- Found BLAS: /usr/lib/aarch64-linux-gnu/libopenblas.so  
+[2.254s] -- Found CUDA: /usr/local/cuda (found suitable version "12.6", minimum required is "12.6") 
+[2.322s] -- Found CUDA: /usr/local/cuda (found version "12.6") 
+[2.326s] -- Found ament_cmake_auto: 1.3.12 (/opt/ros/humble/share/ament_cmake_auto/cmake)
+[2.762s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[3.302s] -- Found rosidl_generator_c: 3.1.7 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[3.312s] -- Found rosidl_adapter: 3.1.7 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[3.331s] -- Found rosidl_generator_cpp: 3.1.7 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[3.357s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[3.393s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[3.488s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[3.492s] -- Found rmw_fastrtps_cpp: 6.2.9 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[3.701s] -- Found OpenSSL: /usr/lib/aarch64-linux-gnu/libcrypto.so (found version "3.0.2")  
+[3.766s] -- Found FastRTPS: /opt/ros/humble/include  
+[3.871s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[4.372s] -- Found eigen3_cmake_module: 0.1.1 (/opt/ros/humble/share/eigen3_cmake_module/cmake)
+[4.377s] -- Found Eigen3: TRUE (found version "3.4.0") 
+[4.377s] -- Ensuring Eigen3 include directory is part of orocos-kdl CMake target
+[4.821s] -- Found ament_lint_auto: 0.12.14 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[4.904s] -- Added test 'copyright' to check source files copyright and LICENSE
+[4.910s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[4.911s] -- Configured cppcheck include dirs: /home/ros2_ws/src/zed-ros2-examples/examples/zed_aruco_localization/src/include;/home/ros2_ws/src/zed-ros2-examples/examples/zed_aruco_localization/src/component/include
+[4.911s] -- Configured cppcheck exclude dirs and/or files: 
+[4.915s] -- Added test 'cpplint' to check C / C++ code against the Google style
+[4.915s] -- Configured cpplint exclude dirs and/or files: 
+[4.917s] -- Added test 'flake8' to check Python code syntax and style conventions
+[4.920s] -- Added test 'lint_cmake' to check CMake code style
+[4.922s] -- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257
+[4.927s] -- Added test 'uncrustify' to check C / C++ code style
+[4.927s] -- Configured uncrustify additional arguments: 
+[4.928s] -- Added test 'xmllint' to check XML markup files
+[4.938s] -- Configuring done
+[5.005s] -- Generating done
+[5.027s] -- Build files have been written to: /home/ros2_ws/build/zed_aruco_localization
+[5.118s] Invoked command in '/home/ros2_ws/build/zed_aruco_localization' returned '0': AMENT_PREFIX_PATH=/home/ros2_ws/install/zed_components:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/ros2_ws/install/zed_components:/opt/ros/humble LD_LIBRARY_PATH=/home/ros2_ws/install/zed_components/lib:${LD_LIBRARY_PATH} /usr/bin/cmake /home/ros2_ws/src/zed-ros2-examples/examples/zed_aruco_localization -DCMAKE_INSTALL_PREFIX=/home/ros2_ws/install/zed_aruco_localization
+[5.120s] Invoking command in '/home/ros2_ws/build/zed_aruco_localization': AMENT_PREFIX_PATH=/home/ros2_ws/install/zed_components:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/ros2_ws/install/zed_components:/opt/ros/humble LD_LIBRARY_PATH=/home/ros2_ws/install/zed_components/lib:${LD_LIBRARY_PATH} /usr/bin/cmake --build /home/ros2_ws/build/zed_aruco_localization -- -j6 -l6
+[5.321s] [ 33%] [32mBuilding CXX object CMakeFiles/zed_aruco_localization_component.dir/src/component/src/aruco.cpp.o[0m
+[5.321s] [ 66%] [32mBuilding CXX object CMakeFiles/zed_aruco_localization_component.dir/src/component/src/zed_aruco_localization_component.cpp.o[0m
+[38.593s] [100%] [32m[1mLinking CXX shared library libzed_aruco_localization_component.so[0m
+[39.254s] [100%] Built target zed_aruco_localization_component
+[39.290s] Invoked command in '/home/ros2_ws/build/zed_aruco_localization' returned '0': AMENT_PREFIX_PATH=/home/ros2_ws/install/zed_components:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/ros2_ws/install/zed_components:/opt/ros/humble LD_LIBRARY_PATH=/home/ros2_ws/install/zed_components/lib:${LD_LIBRARY_PATH} /usr/bin/cmake --build /home/ros2_ws/build/zed_aruco_localization -- -j6 -l6
+[39.295s] Invoking command in '/home/ros2_ws/build/zed_aruco_localization': AMENT_PREFIX_PATH=/home/ros2_ws/install/zed_components:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/ros2_ws/install/zed_components:/opt/ros/humble LD_LIBRARY_PATH=/home/ros2_ws/install/zed_components/lib:${LD_LIBRARY_PATH} /usr/bin/cmake --install /home/ros2_ws/build/zed_aruco_localization
+[39.321s] -- Install configuration: "Release"
+[39.322s] -- Installing: /home/ros2_ws/install/zed_aruco_localization/lib/libzed_aruco_localization_component.so
+[39.328s] -- Set runtime path of "/home/ros2_ws/install/zed_aruco_localization/lib/libzed_aruco_localization_component.so" to ""
+[39.328s] -- Installing: /home/ros2_ws/install/zed_aruco_localization/include/zed_aruco_localization/
+[39.329s] -- Installing: /home/ros2_ws/install/zed_aruco_localization/include/zed_aruco_localization//aruco_loc_visibility_control.hpp
+[39.330s] -- Up-to-date: /home/ros2_ws/install/zed_aruco_localization/include/zed_aruco_localization/
+[39.330s] -- Installing: /home/ros2_ws/install/zed_aruco_localization/include/zed_aruco_localization//zed_aruco_localization_component.hpp
+[39.331s] -- Installing: /home/ros2_ws/install/zed_aruco_localization/include/zed_aruco_localization//aruco.hpp
+[39.334s] -- Installing: /home/ros2_ws/install/zed_aruco_localization/share/zed_aruco_localization/launch
+[39.335s] -- Installing: /home/ros2_ws/install/zed_aruco_localization/share/zed_aruco_localization/launch/zed_aruco_loc.launch.py
+[39.338s] -- Installing: /home/ros2_ws/install/zed_aruco_localization/share/zed_aruco_localization/config
+[39.339s] -- Installing: /home/ros2_ws/install/zed_aruco_localization/share/zed_aruco_localization/config/aruco_loc.yaml
+[39.340s] -- Installing: /home/ros2_ws/install/zed_aruco_localization/share/zed_aruco_localization/rviz2
+[39.341s] -- Installing: /home/ros2_ws/install/zed_aruco_localization/share/zed_aruco_localization/rviz2/aruco.rviz
+[39.343s] -- Installing: /home/ros2_ws/install/zed_aruco_localization/share/zed_aruco_localization/environment/library_path.sh
+[39.344s] -- Installing: /home/ros2_ws/install/zed_aruco_localization/share/zed_aruco_localization/environment/library_path.dsv
+[39.344s] -- Installing: /home/ros2_ws/install/zed_aruco_localization/share/ament_index/resource_index/package_run_dependencies/zed_aruco_localization
+[39.344s] -- Installing: /home/ros2_ws/install/zed_aruco_localization/share/ament_index/resource_index/parent_prefix_path/zed_aruco_localization
+[39.345s] -- Installing: /home/ros2_ws/install/zed_aruco_localization/share/zed_aruco_localization/environment/ament_prefix_path.sh
+[39.345s] -- Installing: /home/ros2_ws/install/zed_aruco_localization/share/zed_aruco_localization/environment/ament_prefix_path.dsv
+[39.345s] -- Installing: /home/ros2_ws/install/zed_aruco_localization/share/zed_aruco_localization/environment/path.sh
+[39.346s] -- Installing: /home/ros2_ws/install/zed_aruco_localization/share/zed_aruco_localization/environment/path.dsv
+[39.346s] -- Installing: /home/ros2_ws/install/zed_aruco_localization/share/zed_aruco_localization/local_setup.bash
+[39.346s] -- Installing: /home/ros2_ws/install/zed_aruco_localization/share/zed_aruco_localization/local_setup.sh
+[39.347s] -- Installing: /home/ros2_ws/install/zed_aruco_localization/share/zed_aruco_localization/local_setup.zsh
+[39.347s] -- Installing: /home/ros2_ws/install/zed_aruco_localization/share/zed_aruco_localization/local_setup.dsv
+[39.347s] -- Installing: /home/ros2_ws/install/zed_aruco_localization/share/zed_aruco_localization/package.dsv
+[39.348s] -- Installing: /home/ros2_ws/install/zed_aruco_localization/share/ament_index/resource_index/packages/zed_aruco_localization
+[39.348s] -- Installing: /home/ros2_ws/install/zed_aruco_localization/share/ament_index/resource_index/rclcpp_components/zed_aruco_localization
+[39.348s] -- Installing: /home/ros2_ws/install/zed_aruco_localization/share/zed_aruco_localization/cmake/ament_cmake_export_include_directories-extras.cmake
+[39.349s] -- Installing: /home/ros2_ws/install/zed_aruco_localization/share/zed_aruco_localization/cmake/ament_cmake_export_libraries-extras.cmake
+[39.349s] -- Installing: /home/ros2_ws/install/zed_aruco_localization/share/zed_aruco_localization/cmake/ament_cmake_export_dependencies-extras.cmake
+[39.349s] -- Installing: /home/ros2_ws/install/zed_aruco_localization/share/zed_aruco_localization/cmake/zed_aruco_localizationConfig.cmake
+[39.350s] -- Installing: /home/ros2_ws/install/zed_aruco_localization/share/zed_aruco_localization/cmake/zed_aruco_localizationConfig-version.cmake
+[39.350s] -- Installing: /home/ros2_ws/install/zed_aruco_localization/share/zed_aruco_localization/package.xml
+[39.365s] Invoked command in '/home/ros2_ws/build/zed_aruco_localization' returned '0': AMENT_PREFIX_PATH=/home/ros2_ws/install/zed_components:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/ros2_ws/install/zed_components:/opt/ros/humble LD_LIBRARY_PATH=/home/ros2_ws/install/zed_components/lib:${LD_LIBRARY_PATH} /usr/bin/cmake --install /home/ros2_ws/build/zed_aruco_localization

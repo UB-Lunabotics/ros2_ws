@@ -1,0 +1,57 @@
+[0.053s] Invoking command in '/home/ros2_ws/build/zed_isaac_ros_nitros_sub': AMENT_PREFIX_PATH=/home/ros2_ws/install/zed_components:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/ros2_ws/install/zed_components:/opt/ros/humble LD_LIBRARY_PATH=/home/ros2_ws/install/zed_components/lib:${LD_LIBRARY_PATH} /usr/bin/cmake /home/ros2_ws/src/zed-ros2-examples/isaac_ros/zed_isaac_ros_nitros_sub -DCMAKE_INSTALL_PREFIX=/home/ros2_ws/install/zed_isaac_ros_nitros_sub
+[0.247s] -- The C compiler identification is GNU 11.4.0
+[0.410s] -- The CXX compiler identification is GNU 11.4.0
+[0.433s] -- Detecting C compiler ABI info
+[0.643s] -- Detecting C compiler ABI info - done
+[0.673s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.674s] -- Detecting C compile features
+[0.675s] -- Detecting C compile features - done
+[0.686s] -- Detecting CXX compiler ABI info
+[0.931s] -- Detecting CXX compiler ABI info - done
+[0.956s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.957s] -- Detecting CXX compile features
+[0.958s] -- Detecting CXX compile features - done
+[0.964s] -- Found ament_cmake_auto: 1.3.12 (/opt/ros/humble/share/ament_cmake_auto/cmake)
+[1.406s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[1.962s] -- Found rosidl_generator_c: 3.1.7 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[1.972s] -- Found rosidl_adapter: 3.1.7 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[1.990s] -- Found rosidl_generator_cpp: 3.1.7 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[2.016s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[2.057s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[2.152s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[2.157s] -- Found rmw_fastrtps_cpp: 6.2.9 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[2.388s] -- Found OpenSSL: /usr/lib/aarch64-linux-gnu/libcrypto.so (found version "3.0.2")  
+[2.462s] -- Found FastRTPS: /opt/ros/humble/include  
+[2.574s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[2.595s] -- Looking for pthread.h
+[2.807s] -- Looking for pthread.h - found
+[2.807s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[3.046s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+[3.049s] -- Found Threads: TRUE  
+[3.711s] -- Found eigen3_cmake_module: 0.1.1 (/opt/ros/humble/share/eigen3_cmake_module/cmake)
+[3.715s] -- Found Eigen3: TRUE (found version "3.4.0") 
+[3.716s] -- Ensuring Eigen3 include directory is part of orocos-kdl CMake target
+[4.298s] -- Configuring done
+[4.319s] -- Generating done
+[4.327s] -- Build files have been written to: /home/ros2_ws/build/zed_isaac_ros_nitros_sub
+[4.382s] Invoked command in '/home/ros2_ws/build/zed_isaac_ros_nitros_sub' returned '0': AMENT_PREFIX_PATH=/home/ros2_ws/install/zed_components:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/ros2_ws/install/zed_components:/opt/ros/humble LD_LIBRARY_PATH=/home/ros2_ws/install/zed_components/lib:${LD_LIBRARY_PATH} /usr/bin/cmake /home/ros2_ws/src/zed-ros2-examples/isaac_ros/zed_isaac_ros_nitros_sub -DCMAKE_INSTALL_PREFIX=/home/ros2_ws/install/zed_isaac_ros_nitros_sub
+[4.387s] Invoking command in '/home/ros2_ws/build/zed_isaac_ros_nitros_sub': AMENT_PREFIX_PATH=/home/ros2_ws/install/zed_components:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/ros2_ws/install/zed_components:/opt/ros/humble LD_LIBRARY_PATH=/home/ros2_ws/install/zed_components/lib:${LD_LIBRARY_PATH} /usr/bin/cmake --build /home/ros2_ws/build/zed_isaac_ros_nitros_sub -- -j6 -l6
+[4.522s] Invoked command in '/home/ros2_ws/build/zed_isaac_ros_nitros_sub' returned '0': AMENT_PREFIX_PATH=/home/ros2_ws/install/zed_components:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/ros2_ws/install/zed_components:/opt/ros/humble LD_LIBRARY_PATH=/home/ros2_ws/install/zed_components/lib:${LD_LIBRARY_PATH} /usr/bin/cmake --build /home/ros2_ws/build/zed_isaac_ros_nitros_sub -- -j6 -l6
+[4.529s] Invoking command in '/home/ros2_ws/build/zed_isaac_ros_nitros_sub': AMENT_PREFIX_PATH=/home/ros2_ws/install/zed_components:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/ros2_ws/install/zed_components:/opt/ros/humble LD_LIBRARY_PATH=/home/ros2_ws/install/zed_components/lib:${LD_LIBRARY_PATH} /usr/bin/cmake --install /home/ros2_ws/build/zed_isaac_ros_nitros_sub
+[4.550s] -- Install configuration: "Release"
+[4.551s] -- Installing: /home/ros2_ws/install/zed_isaac_ros_nitros_sub/share/ament_index/resource_index/package_run_dependencies/zed_isaac_ros_nitros_sub
+[4.551s] -- Installing: /home/ros2_ws/install/zed_isaac_ros_nitros_sub/share/ament_index/resource_index/parent_prefix_path/zed_isaac_ros_nitros_sub
+[4.552s] -- Installing: /home/ros2_ws/install/zed_isaac_ros_nitros_sub/share/zed_isaac_ros_nitros_sub/environment/ament_prefix_path.sh
+[4.552s] -- Installing: /home/ros2_ws/install/zed_isaac_ros_nitros_sub/share/zed_isaac_ros_nitros_sub/environment/ament_prefix_path.dsv
+[4.553s] -- Installing: /home/ros2_ws/install/zed_isaac_ros_nitros_sub/share/zed_isaac_ros_nitros_sub/environment/path.sh
+[4.553s] -- Installing: /home/ros2_ws/install/zed_isaac_ros_nitros_sub/share/zed_isaac_ros_nitros_sub/environment/path.dsv
+[4.553s] -- Installing: /home/ros2_ws/install/zed_isaac_ros_nitros_sub/share/zed_isaac_ros_nitros_sub/local_setup.bash
+[4.554s] -- Installing: /home/ros2_ws/install/zed_isaac_ros_nitros_sub/share/zed_isaac_ros_nitros_sub/local_setup.sh
+[4.555s] -- Installing: /home/ros2_ws/install/zed_isaac_ros_nitros_sub/share/zed_isaac_ros_nitros_sub/local_setup.zsh
+[4.555s] -- Installing: /home/ros2_ws/install/zed_isaac_ros_nitros_sub/share/zed_isaac_ros_nitros_sub/local_setup.dsv
+[4.555s] -- Installing: /home/ros2_ws/install/zed_isaac_ros_nitros_sub/share/zed_isaac_ros_nitros_sub/package.dsv
+[4.556s] -- Installing: /home/ros2_ws/install/zed_isaac_ros_nitros_sub/share/ament_index/resource_index/packages/zed_isaac_ros_nitros_sub
+[4.556s] -- Installing: /home/ros2_ws/install/zed_isaac_ros_nitros_sub/share/zed_isaac_ros_nitros_sub/cmake/zed_isaac_ros_nitros_subConfig.cmake
+[4.556s] -- Installing: /home/ros2_ws/install/zed_isaac_ros_nitros_sub/share/zed_isaac_ros_nitros_sub/cmake/zed_isaac_ros_nitros_subConfig-version.cmake
+[4.556s] -- Installing: /home/ros2_ws/install/zed_isaac_ros_nitros_sub/share/zed_isaac_ros_nitros_sub/package.xml
+[4.567s] Invoked command in '/home/ros2_ws/build/zed_isaac_ros_nitros_sub' returned '0': AMENT_PREFIX_PATH=/home/ros2_ws/install/zed_components:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/ros2_ws/install/zed_components:/opt/ros/humble LD_LIBRARY_PATH=/home/ros2_ws/install/zed_components/lib:${LD_LIBRARY_PATH} /usr/bin/cmake --install /home/ros2_ws/build/zed_isaac_ros_nitros_sub
