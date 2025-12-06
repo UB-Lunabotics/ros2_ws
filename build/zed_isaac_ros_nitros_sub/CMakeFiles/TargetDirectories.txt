@@ -1,9 +1,0 @@
-/home/ros2_ws/build/zed_isaac_ros_nitros_sub/CMakeFiles/uninstall.dir
-/home/ros2_ws/build/zed_isaac_ros_nitros_sub/CMakeFiles/zed_isaac_ros_nitros_sub_uninstall.dir
-/home/ros2_ws/build/zed_isaac_ros_nitros_sub/CMakeFiles/test.dir
-/home/ros2_ws/build/zed_isaac_ros_nitros_sub/CMakeFiles/edit_cache.dir
-/home/ros2_ws/build/zed_isaac_ros_nitros_sub/CMakeFiles/rebuild_cache.dir
-/home/ros2_ws/build/zed_isaac_ros_nitros_sub/CMakeFiles/list_install_components.dir
-/home/ros2_ws/build/zed_isaac_ros_nitros_sub/CMakeFiles/install.dir
-/home/ros2_ws/build/zed_isaac_ros_nitros_sub/CMakeFiles/install/local.dir
-/home/ros2_ws/build/zed_isaac_ros_nitros_sub/CMakeFiles/install/strip.dir
