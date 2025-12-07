@@ -1,0 +1,86 @@
+[0.100s] Invoking command in '/home/ros2_ws/build/zed_ipc': AMENT_PREFIX_PATH=/home/ros2_ws/install/zed_multi_camera:/home/ros2_ws/install/zed_wrapper:/home/ros2_ws/install/zed_components:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/ros2_ws/install/zed_multi_camera:/home/ros2_ws/install/zed_wrapper:/home/ros2_ws/install/zed_components:/opt/ros/humble LD_LIBRARY_PATH=/home/ros2_ws/install/zed_components/lib:${LD_LIBRARY_PATH} /usr/bin/cmake /home/ros2_ws/src/zed-ros2-examples/tutorials/zed_ipc -DCMAKE_INSTALL_PREFIX=/home/ros2_ws/install/zed_ipc
+[0.429s] -- The C compiler identification is GNU 11.4.0
+[0.588s] -- The CXX compiler identification is GNU 11.4.0
+[0.607s] -- Detecting C compiler ABI info
+[0.893s] -- Detecting C compiler ABI info - done
+[0.915s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.915s] -- Detecting C compile features
+[0.916s] -- Detecting C compile features - done
+[0.926s] -- Detecting CXX compiler ABI info
+[1.245s] -- Detecting CXX compiler ABI info - done
+[1.275s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[1.276s] -- Detecting CXX compile features
+[1.276s] -- Detecting CXX compile features - done
+[1.283s] -- Found ament_cmake_auto: 1.3.12 (/opt/ros/humble/share/ament_cmake_auto/cmake)
+[1.773s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[2.390s] -- Found rosidl_generator_c: 3.1.7 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[2.403s] -- Found rosidl_adapter: 3.1.7 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[2.425s] -- Found rosidl_generator_cpp: 3.1.7 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[2.459s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[2.503s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[2.611s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[2.617s] -- Found rmw_fastrtps_cpp: 6.2.9 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[2.863s] -- Found OpenSSL: /usr/lib/aarch64-linux-gnu/libcrypto.so (found version "3.0.2")  
+[2.947s] -- Found FastRTPS: /opt/ros/humble/include  
+[3.076s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[3.105s] -- Looking for pthread.h
+[3.351s] -- Looking for pthread.h - found
+[3.353s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[3.577s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+[3.580s] -- Found Threads: TRUE  
+[3.863s] -- Found ament_lint_auto: 0.12.14 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[3.943s] -- Added test 'copyright' to check source files copyright and LICENSE
+[3.947s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[3.947s] -- Configured cppcheck include dirs: /home/ros2_ws/src/zed-ros2-examples/tutorials/zed_ipc/src/include;/home/ros2_ws/src/zed-ros2-examples/tutorials/zed_ipc/src/component/include;/home/ros2_ws/src/zed-ros2-examples/tutorials/zed_ipc/src/components/include
+[3.948s] -- Configured cppcheck exclude dirs and/or files: 
+[3.951s] -- Added test 'cpplint' to check C / C++ code against the Google style
+[3.951s] -- Configured cpplint exclude dirs and/or files: 
+[3.952s] -- Added test 'flake8' to check Python code syntax and style conventions
+[3.954s] -- Added test 'lint_cmake' to check CMake code style
+[3.955s] -- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257
+[3.959s] -- Added test 'uncrustify' to check C / C++ code style
+[3.959s] -- Configured uncrustify additional arguments: 
+[3.960s] -- Added test 'xmllint' to check XML markup files
+[3.972s] -- Configuring done
+[4.011s] -- Generating done
+[4.024s] -- Build files have been written to: /home/ros2_ws/build/zed_ipc
+[4.076s] Invoked command in '/home/ros2_ws/build/zed_ipc' returned '0': AMENT_PREFIX_PATH=/home/ros2_ws/install/zed_multi_camera:/home/ros2_ws/install/zed_wrapper:/home/ros2_ws/install/zed_components:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/ros2_ws/install/zed_multi_camera:/home/ros2_ws/install/zed_wrapper:/home/ros2_ws/install/zed_components:/opt/ros/humble LD_LIBRARY_PATH=/home/ros2_ws/install/zed_components/lib:${LD_LIBRARY_PATH} /usr/bin/cmake /home/ros2_ws/src/zed-ros2-examples/tutorials/zed_ipc -DCMAKE_INSTALL_PREFIX=/home/ros2_ws/install/zed_ipc
+[4.082s] Invoking command in '/home/ros2_ws/build/zed_ipc': AMENT_PREFIX_PATH=/home/ros2_ws/install/zed_multi_camera:/home/ros2_ws/install/zed_wrapper:/home/ros2_ws/install/zed_components:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/ros2_ws/install/zed_multi_camera:/home/ros2_ws/install/zed_wrapper:/home/ros2_ws/install/zed_components:/opt/ros/humble LD_LIBRARY_PATH=/home/ros2_ws/install/zed_components/lib:${LD_LIBRARY_PATH} /usr/bin/cmake --build /home/ros2_ws/build/zed_ipc -- -j6 -l6
+[4.338s] [ 66%] [32mBuilding CXX object CMakeFiles/pointcloud_component.dir/src/components/src/winavg.cpp.o[0m
+[4.340s] [ 66%] [32mBuilding CXX object CMakeFiles/pointcloud_component.dir/src/components/src/pointcloud_component.cpp.o[0m
+[40.083s] [100%] [32m[1mLinking CXX shared library libpointcloud_component.so[0m
+[40.522s] [100%] Built target pointcloud_component
+[40.558s] Invoked command in '/home/ros2_ws/build/zed_ipc' returned '0': AMENT_PREFIX_PATH=/home/ros2_ws/install/zed_multi_camera:/home/ros2_ws/install/zed_wrapper:/home/ros2_ws/install/zed_components:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/ros2_ws/install/zed_multi_camera:/home/ros2_ws/install/zed_wrapper:/home/ros2_ws/install/zed_components:/opt/ros/humble LD_LIBRARY_PATH=/home/ros2_ws/install/zed_components/lib:${LD_LIBRARY_PATH} /usr/bin/cmake --build /home/ros2_ws/build/zed_ipc -- -j6 -l6
+[40.564s] Invoking command in '/home/ros2_ws/build/zed_ipc': AMENT_PREFIX_PATH=/home/ros2_ws/install/zed_multi_camera:/home/ros2_ws/install/zed_wrapper:/home/ros2_ws/install/zed_components:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/ros2_ws/install/zed_multi_camera:/home/ros2_ws/install/zed_wrapper:/home/ros2_ws/install/zed_components:/opt/ros/humble LD_LIBRARY_PATH=/home/ros2_ws/install/zed_components/lib:${LD_LIBRARY_PATH} /usr/bin/cmake --install /home/ros2_ws/build/zed_ipc
+[40.585s] -- Install configuration: "Release"
+[40.585s] -- Installing: /home/ros2_ws/install/zed_ipc/lib/libpointcloud_component.so
+[40.590s] -- Set runtime path of "/home/ros2_ws/install/zed_ipc/lib/libpointcloud_component.so" to ""
+[40.590s] -- Installing: /home/ros2_ws/install/zed_ipc/include/zed_ipc/
+[40.590s] -- Installing: /home/ros2_ws/install/zed_ipc/include/zed_ipc//ipc_visibility_control.hpp
+[40.591s] -- Up-to-date: /home/ros2_ws/install/zed_ipc/include/zed_ipc/
+[40.591s] -- Installing: /home/ros2_ws/install/zed_ipc/include/zed_ipc//winavg.hpp
+[40.591s] -- Installing: /home/ros2_ws/install/zed_ipc/include/zed_ipc//pointcloud_component.hpp
+[40.591s] -- Installing: /home/ros2_ws/install/zed_ipc/share/zed_ipc/launch
+[40.592s] -- Installing: /home/ros2_ws/install/zed_ipc/share/zed_ipc/launch/zed_ipc.launch.py
+[40.593s] -- Installing: /home/ros2_ws/install/zed_ipc/share/zed_ipc/environment/library_path.sh
+[40.593s] -- Installing: /home/ros2_ws/install/zed_ipc/share/zed_ipc/environment/library_path.dsv
+[40.594s] -- Installing: /home/ros2_ws/install/zed_ipc/share/ament_index/resource_index/package_run_dependencies/zed_ipc
+[40.594s] -- Installing: /home/ros2_ws/install/zed_ipc/share/ament_index/resource_index/parent_prefix_path/zed_ipc
+[40.594s] -- Installing: /home/ros2_ws/install/zed_ipc/share/zed_ipc/environment/ament_prefix_path.sh
+[40.595s] -- Installing: /home/ros2_ws/install/zed_ipc/share/zed_ipc/environment/ament_prefix_path.dsv
+[40.595s] -- Installing: /home/ros2_ws/install/zed_ipc/share/zed_ipc/environment/path.sh
+[40.595s] -- Installing: /home/ros2_ws/install/zed_ipc/share/zed_ipc/environment/path.dsv
+[40.596s] -- Installing: /home/ros2_ws/install/zed_ipc/share/zed_ipc/local_setup.bash
+[40.596s] -- Installing: /home/ros2_ws/install/zed_ipc/share/zed_ipc/local_setup.sh
+[40.596s] -- Installing: /home/ros2_ws/install/zed_ipc/share/zed_ipc/local_setup.zsh
+[40.596s] -- Installing: /home/ros2_ws/install/zed_ipc/share/zed_ipc/local_setup.dsv
+[40.597s] -- Installing: /home/ros2_ws/install/zed_ipc/share/zed_ipc/package.dsv
+[40.597s] -- Installing: /home/ros2_ws/install/zed_ipc/share/ament_index/resource_index/packages/zed_ipc
+[40.598s] -- Installing: /home/ros2_ws/install/zed_ipc/share/ament_index/resource_index/rclcpp_components/zed_ipc
+[40.598s] -- Installing: /home/ros2_ws/install/zed_ipc/share/zed_ipc/cmake/ament_cmake_export_include_directories-extras.cmake
+[40.598s] -- Installing: /home/ros2_ws/install/zed_ipc/share/zed_ipc/cmake/ament_cmake_export_libraries-extras.cmake
+[40.599s] -- Installing: /home/ros2_ws/install/zed_ipc/share/zed_ipc/cmake/ament_cmake_export_dependencies-extras.cmake
+[40.599s] -- Installing: /home/ros2_ws/install/zed_ipc/share/zed_ipc/cmake/zed_ipcConfig.cmake
+[40.599s] -- Installing: /home/ros2_ws/install/zed_ipc/share/zed_ipc/cmake/zed_ipcConfig-version.cmake
+[40.600s] -- Installing: /home/ros2_ws/install/zed_ipc/share/zed_ipc/package.xml
+[40.608s] Invoked command in '/home/ros2_ws/build/zed_ipc' returned '0': AMENT_PREFIX_PATH=/home/ros2_ws/install/zed_multi_camera:/home/ros2_ws/install/zed_wrapper:/home/ros2_ws/install/zed_components:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/ros2_ws/install/zed_multi_camera:/home/ros2_ws/install/zed_wrapper:/home/ros2_ws/install/zed_components:/opt/ros/humble LD_LIBRARY_PATH=/home/ros2_ws/install/zed_components/lib:${LD_LIBRARY_PATH} /usr/bin/cmake --install /home/ros2_ws/build/zed_ipc
