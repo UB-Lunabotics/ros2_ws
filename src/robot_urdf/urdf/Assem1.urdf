@@ -1,0 +1,827 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="Assem1">
+  <link
+    name="Frame">
+    <inertial>
+      <origin
+        xyz="0.35186 0.10052 0.29034"
+        rpy="0 0 0" />
+      <mass
+        value="13.897" />
+      <inertia
+        ixx="0.26884"
+        ixy="-6.9578E-06"
+        ixz="-4.0176E-05"
+        iyy="0.13264"
+        iyz="-2.9341E-05"
+        izz="0.16845" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://../meshes/Frame.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://../meshes/Frame.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="WheelFR">
+    <inertial>
+      <origin
+        xyz="-3.8858E-16 -0.054293 0"
+        rpy="0 0 0" />
+      <mass
+        value="2.1524" />
+      <inertia
+        ixx="0.0097744"
+        ixy="1.8907E-18"
+        ixz="3.6863E-17"
+        iyy="0.017383"
+        iyz="-1.4862E-17"
+        izz="0.0097744" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://../meshes/WheelFR.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://../meshes/WheelFR.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="WheelFR"
+    type="continuous">
+    <origin
+      xyz="0.39887 -0.6511 -0.15576"
+      rpy="1.5708 0 0.76199" />
+    <parent
+      link="Frame" />
+    <child
+      link="WheelFR" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="WheelFL">
+    <inertial>
+      <origin
+        xyz="-1.1102E-16 0.057302 0"
+        rpy="0 0 0" />
+      <mass
+        value="2.1524" />
+      <inertia
+        ixx="0.0097744"
+        ixy="2.41E-18"
+        ixz="7.5745E-18"
+        iyy="0.017383"
+        iyz="-1.2786E-17"
+        izz="0.0097744" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://../meshes/WheelFL.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://../meshes/WheelFL.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="WheelFL"
+    type="continuous">
+    <origin
+      xyz="0.39887 -0.6511 0.34793"
+      rpy="1.5708 0 0" />
+    <parent
+      link="Frame" />
+    <child
+      link="WheelFL" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="WheelRR">
+    <inertial>
+      <origin
+        xyz="-1.11022302462516E-16 -0.0542926667743583 -1.11022302462516E-16"
+        rpy="0 0 0" />
+      <mass
+        value="2.15237733904708" />
+      <inertia
+        ixx="0.00977437164033258"
+        ixy="1.69042663674178E-18"
+        ixz="6.19043441588965E-18"
+        iyy="0.0173832911993011"
+        iyz="-1.42464557275505E-17"
+        izz="0.00977437164033264" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://../meshes/WheelRR.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://../meshes/WheelRR.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="WheelRR"
+    type="continuous">
+    <origin
+      xyz="0.39876 -0.1619 -0.15576"
+      rpy="1.5708 0 0" />
+    <parent
+      link="Frame" />
+    <child
+      link="WheelRR" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="WheelRL">
+    <inertial>
+      <origin
+        xyz="-2.22044604925031E-16 0.0573016162852231 5.55111512312578E-17"
+        rpy="0 0 0" />
+      <mass
+        value="2.15237733904728" />
+      <inertia
+        ixx="0.00977437164033301"
+        ixy="3.60657675780835E-18"
+        ixz="-9.75781955236954E-17"
+        iyy="0.0173832911993013"
+        iyz="-1.51706331457014E-17"
+        izz="0.00977437164033277" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://../meshes/WheelRL.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://../meshes/WheelRL.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="WheelRL"
+    type="continuous">
+    <origin
+      xyz="0.39843 -0.16215 0.34793"
+      rpy="1.5708 0 0.33492" />
+    <parent
+      link="Frame" />
+    <child
+      link="WheelRL" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="ArmL">
+    <inertial>
+      <origin
+        xyz="-0.181172098431637 0.00299999999325778 0.000232197973779769"
+        rpy="0 0 0" />
+      <mass
+        value="0.315479944702991" />
+      <inertia
+        ixx="6.61206925297548E-05"
+        ixy="-1.48541130720833E-13"
+        ixz="5.08850592613695E-06"
+        iyy="0.00410064060745657"
+        iyz="-4.08840538545531E-15"
+        izz="0.00403641279459504" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://../meshes/ArmL.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://../meshes/ArmL.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="ArmL"
+    type="revolute">
+    <origin
+      xyz="0.41559 -0.16021 0.29504"
+      rpy="1.5708 0 1.0647" />
+    <parent
+      link="Frame" />
+    <child
+      link="ArmL" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="0"
+      upper="1.57"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="DrumRevL">
+    <inertial>
+      <origin
+        xyz="-1.2298E-07 -0.18128 -1.0264E-08"
+        rpy="0 0 0" />
+      <mass
+        value="10.098" />
+      <inertia
+        ixx="0.14631"
+        ixy="7.3733E-12"
+        ixz="-4.8572E-17"
+        iyy="0.28814"
+        iyz="-7.8857E-12"
+        izz="0.14631" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://../meshes/DrumRevL.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://../meshes/DrumRevL.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="DrumRevL"
+    type="continuous">
+    <origin
+      xyz="-0.3575 0 0.00045819"
+      rpy="0 1.2579 0" />
+    <parent
+      link="ArmL" />
+    <child
+      link="DrumRevL" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="ArmR">
+    <inertial>
+      <origin
+        xyz="-0.179775245558887 -0.0200000000065461 0.000230407708434299"
+        rpy="0 0 0" />
+      <mass
+        value="0.567806649929163" />
+      <inertia
+        ixx="0.000314167082439308"
+        ixy="-2.74420742699456E-13"
+        ixz="9.5318703052803E-06"
+        iyy="0.00776790829425736"
+        iyz="-7.48290141045441E-16"
+        izz="0.00775138145150778" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://../meshes/ArmR.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://../meshes/ArmR.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="ArmR"
+    type="continuous">
+    <origin
+      xyz="0.41559 -0.16021 -0.064963"
+      rpy="1.5708 0 1.0647" />
+    <parent
+      link="Frame" />
+    <child
+      link="ArmR" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="0"
+      upper="1.57"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="DrumRevR">
+    <inertial>
+      <origin
+        xyz="-1.24463539474817E-07 0.178722908632021 -9.79548059332203E-09"
+        rpy="0 0 0" />
+      <mass
+        value="10.098436060602" />
+      <inertia
+        ixx="0.146312170528505"
+        ixy="7.37328961057762E-12"
+        ixz="-2.77555756156289E-17"
+        iyy="0.288137512699888"
+        iyz="-7.88571317056044E-12"
+        izz="0.146312170528505" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://../meshes/DrumRevR.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://../meshes/DrumRevR.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="DrumRevR"
+    type="continuous">
+    <origin
+      xyz="-0.3575 0 0.00045819"
+      rpy="0 1.2579 0" />
+    <parent
+      link="ArmR" />
+    <child
+      link="DrumRevR" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <!-- Sensor and camera frames; poses are best-guess defaults for a front-mounted rover. -->
+  <link
+    name="imu_link">
+    <inertial>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.001" />
+      <inertia
+        ixx="1e-6"
+        ixy="0"
+        ixz="0"
+        iyy="1e-6"
+        iyz="0"
+        izz="1e-6" />
+    </inertial>
+  </link>
+  <joint
+    name="imu_joint"
+    type="fixed">
+    <origin
+      xyz="0.35 0.1 0.29"
+      rpy="0 0 0" />
+    <parent
+      link="Frame" />
+    <child
+      link="imu_link" />
+  </joint>
+  <link
+    name="ir_left_link" />
+  <joint
+    name="ir_left_joint"
+    type="fixed">
+    <origin
+      xyz="0.48 0.18 0.12"
+      rpy="0 0 0" />
+    <parent
+      link="Frame" />
+    <child
+      link="ir_left_link" />
+  </joint>
+  <link
+    name="ir_right_link" />
+  <joint
+    name="ir_right_joint"
+    type="fixed">
+    <origin
+      xyz="0.48 -0.18 0.12"
+      rpy="0 0 0" />
+    <parent
+      link="Frame" />
+    <child
+      link="ir_right_link" />
+  </joint>
+  <link
+    name="zed2_link" />
+  <joint
+    name="zed2_joint"
+    type="fixed">
+    <origin
+      xyz="0.5 0 0.35"
+      rpy="0 0 0" />
+    <parent
+      link="Frame" />
+    <child
+      link="zed2_link" />
+  </joint>
+  <link
+    name="zed2_left_camera_link" />
+  <joint
+    name="zed2_left_camera_joint"
+    type="fixed">
+    <origin
+      xyz="0 0.06 0"
+      rpy="0 0 0" />
+    <parent
+      link="zed2_link" />
+    <child
+      link="zed2_left_camera_link" />
+  </joint>
+  <link
+    name="zed2_right_camera_link" />
+  <joint
+    name="zed2_right_camera_joint"
+    type="fixed">
+    <origin
+      xyz="0 -0.06 0"
+      rpy="0 0 0" />
+    <parent
+      link="zed2_link" />
+    <child
+      link="zed2_right_camera_link" />
+  </joint>
+  <!-- IMU sensor for orientation/acceleration. -->
+  <gazebo
+    reference="imu_link">
+    <sensor
+      name="imu_sensor"
+      type="imu">
+      <always_on>true</always_on>
+      <update_rate>100</update_rate>
+      <imu>
+        <angular_velocity>
+          <noise
+            type="gaussian">
+            <mean>0</mean>
+            <stddev>0.0002</stddev>
+          </noise>
+        </angular_velocity>
+        <linear_acceleration>
+          <noise
+            type="gaussian">
+            <mean>0</mean>
+            <stddev>0.002</stddev>
+          </noise>
+        </linear_acceleration>
+      </imu>
+      <!-- ROS 2 topic bridging for this sensor is done via ros_gz_bridge. -->
+    </sensor>
+  </gazebo>
+  <!-- IR proximity sensors using ray plugins. -->
+  <gazebo
+    reference="ir_left_link">
+    <sensor
+      name="ir_left"
+      type="ray">
+      <always_on>true</always_on>
+      <update_rate>20</update_rate>
+      <ray>
+        <scan>
+          <horizontal>
+            <samples>1</samples>
+            <resolution>1</resolution>
+            <min_angle>0</min_angle>
+            <max_angle>0</max_angle>
+          </horizontal>
+        </scan>
+        <range>
+          <min>0.02</min>
+          <max>2.0</max>
+          <resolution>0.01</resolution>
+        </range>
+      </ray>
+      <!-- ROS 2 topic bridging for this sensor is done via ros_gz_bridge. -->
+    </sensor>
+  </gazebo>
+  <gazebo
+    reference="ir_right_link">
+    <sensor
+      name="ir_right"
+      type="ray">
+      <always_on>true</always_on>
+      <update_rate>20</update_rate>
+      <ray>
+        <scan>
+          <horizontal>
+            <samples>1</samples>
+            <resolution>1</resolution>
+            <min_angle>0</min_angle>
+            <max_angle>0</max_angle>
+          </horizontal>
+        </scan>
+        <range>
+          <min>0.02</min>
+          <max>2.0</max>
+          <resolution>0.01</resolution>
+        </range>
+      </ray>
+      <!-- ROS 2 topic bridging for this sensor is done via ros_gz_bridge. -->
+    </sensor>
+  </gazebo>
+  <!-- Stereo ZED2 camera streams (left/right). -->
+  <gazebo
+    reference="zed2_left_camera_link">
+    <sensor
+      name="zed2_left_camera"
+      type="camera">
+      <always_on>true</always_on>
+      <update_rate>30</update_rate>
+      <camera>
+        <horizontal_fov>1.2</horizontal_fov>
+        <image>
+          <width>1280</width>
+          <height>720</height>
+          <format>R8G8B8</format>
+        </image>
+        <clip>
+          <near>0.05</near>
+          <far>50.0</far>
+        </clip>
+      </camera>
+      <!-- ROS 2 topic bridging for this sensor is done via ros_gz_bridge. -->
+    </sensor>
+  </gazebo>
+  <gazebo
+    reference="zed2_right_camera_link">
+    <sensor
+      name="zed2_right_camera"
+      type="camera">
+      <always_on>true</always_on>
+      <update_rate>30</update_rate>
+      <camera>
+        <horizontal_fov>1.2</horizontal_fov>
+        <image>
+          <width>1280</width>
+          <height>720</height>
+          <format>R8G8B8</format>
+        </image>
+        <clip>
+          <near>0.05</near>
+          <far>50.0</far>
+        </clip>
+      </camera>
+      <!-- ROS 2 topic bridging for this sensor is done via ros_gz_bridge. -->
+    </sensor>
+  </gazebo>
+  <!-- Wheel and drum actuators exposed as velocity-controlled joints in Gazebo. -->
+  <transmission
+    name="WheelFR_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint
+      name="WheelFR">
+      <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+    </joint>
+    <actuator
+      name="WheelFR_motor">
+      <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission
+    name="WheelFL_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint
+      name="WheelFL">
+      <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+    </joint>
+    <actuator
+      name="WheelFL_motor">
+      <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission
+    name="WheelRR_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint
+      name="WheelRR">
+      <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+    </joint>
+    <actuator
+      name="WheelRR_motor">
+      <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission
+    name="WheelRL_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint
+      name="WheelRL">
+      <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+    </joint>
+    <actuator
+      name="WheelRL_motor">
+      <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission
+    name="DrumRevL_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint
+      name="DrumRevL">
+      <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+    </joint>
+    <actuator
+      name="DrumRevL_motor">
+      <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission
+    name="DrumRevR_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint
+      name="DrumRevR">
+      <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+    </joint>
+    <actuator
+      name="DrumRevR_motor">
+      <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <!-- Gazebo ROS 2 control plugin to actuate joints; controllers are configured separately. -->
+  <gazebo>
+    <plugin
+      name="gz_ros2_control"
+      filename="libgz_ros2_control-system.so" />
+  </gazebo>
+  <!-- ros2_control interfaces for wheel and drum motors. -->
+  <ros2_control
+    name="Assem1System"
+    type="system">
+    <hardware>
+      <plugin>gz_ros2_control/GazeboSimSystem</plugin>
+    </hardware>
+    <joint
+      name="WheelFR">
+      <command_interface name="velocity" />
+      <state_interface name="position" />
+      <state_interface name="velocity" />
+    </joint>
+    <joint
+      name="WheelFL">
+      <command_interface name="velocity" />
+      <state_interface name="position" />
+      <state_interface name="velocity" />
+    </joint>
+    <joint
+      name="WheelRR">
+      <command_interface name="velocity" />
+      <state_interface name="position" />
+      <state_interface name="velocity" />
+    </joint>
+    <joint
+      name="WheelRL">
+      <command_interface name="velocity" />
+      <state_interface name="position" />
+      <state_interface name="velocity" />
+    </joint>
+    <joint
+      name="DrumRevL">
+      <command_interface name="velocity" />
+      <state_interface name="position" />
+      <state_interface name="velocity" />
+    </joint>
+    <joint
+      name="DrumRevR">
+      <command_interface name="velocity" />
+      <state_interface name="position" />
+      <state_interface name="velocity" />
+    </joint>
+  </ros2_control>
+</robot>

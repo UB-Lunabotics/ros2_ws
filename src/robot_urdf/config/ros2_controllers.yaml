@@ -1,0 +1,32 @@
+# Controller config for Gazebo + ros2_control.
+controller_manager:
+  ros__parameters:
+    update_rate: 100
+
+    # Publishes joint_states for encoders/odometry consumers.
+    joint_state_broadcaster:
+      type: joint_state_broadcaster/JointStateBroadcaster
+
+    # Differential drive controller for the 4 wheel joints.
+    diff_drive_controller:
+      type: diff_drive_controller/DiffDriveController
+
+    # Velocity controller for the drum joints.
+    drum_controller:
+      type: forward_command_controller/ForwardCommandController
+
+diff_drive_controller:
+  ros__parameters:
+    left_wheel_names: ["WheelFL", "WheelRL"]
+    right_wheel_names: ["WheelFR", "WheelRR"]
+    wheel_separation: 0.6  # Adjust to your track width (meters).
+    wheel_radius: 0.175    # 175mm wheel radius.
+    base_frame_id: Frame
+    odom_frame_id: odom
+    enable_odom_tf: true
+    publish_rate: 50.0
+
+drum_controller:
+  ros__parameters:
+    joints: ["DrumRevL", "DrumRevR"]
+    interface_name: velocity
