@@ -1,0 +1,28 @@
+# ZED2 Configuration Parameters
+zed:
+    general:
+        camera_model:                'zed2'
+        sdk_verbose:                 1
+        svo_file:                    '' # Path to an SVO file for playback
+        pub_frame_rate:              30.0 # Frequency of topic publication
+
+    video:
+        resolution:                  'HD720' # 'HD2K', 'HD1080', 'HD720', 'VGA'
+        grab_frame_rate:             30
+        extrinsic_parameters_steps:  0.01
+
+    depth:
+        depth_mode:                  'ULTRA' # 'NEURAL', 'ULTRA', 'QUALITY', 'PERFORMANCE'
+        min_depth:                   0.3    # Min distance in meters
+        max_depth:                   20.0   # Max distance in meters
+        depth_stabilization:         1      # Enabled
+
+    pos_tracking:
+        pos_tracking_enabled:        true
+        publish_tf:                  true
+        publish_map_tf:              true
+        precision:                   'STANDARD'
+
+    sensors:
+        sensors_image_sync:          true # Sync IMU/Barometer data with frames
+        max_pub_rate:                400.0 # IMU polling rate
