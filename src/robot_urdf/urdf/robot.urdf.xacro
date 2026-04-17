@@ -23,8 +23,10 @@
   <xacro:arg name="camera_model" default="zed2i"/>
 
   <xacro:include filename="$(find zed_wrapper)/urdf/zed_macro.urdf.xacro"/>
-  <xacro:zed_camera name="$(arg camera_name)" model="$(arg camera_model)"/>
 
+  <xacro:zed_camera name="$(arg camera_name)" model="$(arg camera_model)">
+    <gnss_origin xyz="0 0 0" rpy="0 0 0"/>
+  </xacro:zed_camera>
 
   <!-- =========================================================
        INERTIA MACROS
