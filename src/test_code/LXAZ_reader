@@ -1,0 +1,33 @@
+import rclpy
+from rclpy.node import Node
+from geometry_msgs.msg import Twist
+
+class CmdVelReader(Node):
+    def __init__(self):
+        super().__init__('cmd_vel_reader')
+        self.subscription = self.create_subscription(
+            Twist,
+            '/cmd_vel',
+            self.cmd_vel_callback,
+            10
+        )
+
+    def cmd_vel_callback(self, msg: Twist):
+        linear_x = msg.linear.x
+        angular_z = msg.angular.z
+
+        # Hardcoded into a string
+        hardcoded_string = f"linear_x={linear_x},angular_z={angular_z}"
+
+        self.get_logger().info(f'Received: {hardcoded_string}')
+
+
+def main(args=None):
+    rclpy.init(args=args)
+    node = CmdVelReader()
+    rclpy.spin(node)
+    node.destroy_node()
+    rclpy.shutdown()
+
+if __name__ == '__main__':
+    main()
