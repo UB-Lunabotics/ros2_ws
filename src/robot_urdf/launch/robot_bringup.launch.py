@@ -52,10 +52,6 @@ def generate_launch_description():
             ]),
             "use_sim_time": True,
         }],
-Best,
-Travis Minor
-Computer Science BS | University at Buffalo '26
-Email: Tcminor@buffalo.edu
     )
 
     # -------------------------------------------------------------------------
