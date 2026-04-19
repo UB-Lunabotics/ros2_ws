@@ -21,8 +21,8 @@ WORLD        = "ucf.world"             # relative to <pkg>/worlds/
 SPAWN        = (0.0, 0.0, 0.05, 0.0)  # x, y, z, yaw
 
 # Gazebo camera bridge topics — must match your SDF sensor <topic> names
-RGB_TOPIC    = "/camera/color/image_raw"
-DEPTH_TOPIC  = "/camera/depth/image_raw"
+RGB_TOPIC    = "/camera/color/image"
+DEPTH_TOPIC  = "/camera/color/depth_image"
 INFO_TOPIC   = "/camera/color/camera_info"
 
 # Odometry topics
@@ -131,23 +131,18 @@ def generate_launch_description():
         ("rgb/image",       RGB_TOPIC),
         ("depth/image",     DEPTH_TOPIC),
         ("rgb/camera_info", INFO_TOPIC),
-        ("odom",            ODOM_TOPIC),
+        ("odom",            ODOM_TOPIC),   # /odometry/filtered from EKF
     ]
-
-    rtab_odom = Node(
-        package="rtabmap_odom", executable="rgbd_odometry",
-        parameters=[rtab_cfg, {**_common, "publish_tf": True}],
-        remappings=_remaps,
-        output="screen",
-    )
 
     rtab_slam = Node(
         package="rtabmap_slam", executable="rtabmap",
         parameters=[rtab_cfg, {
             **_common,
-            "map_frame_id": "map", "publish_tf": True, "subscribe_scan": True,
+            "map_frame_id": "map",
+            "subscribe_scan": True,
             "database_path": "~/.ros/rtabmap.db",
-            "Mem/IncrementalMemory": "true", "Mem/InitWMWithAllNodes": "false",
+            "Mem/IncrementalMemory": "true", 
+            "Mem/InitWMWithAllNodes": "false",
         }],
         remappings=[*_remaps, ("scan", SCAN_TOPIC)],
         arguments=["--delete_db_on_start"],
@@ -211,6 +206,6 @@ def generate_launch_description():
 
         spawn,  # delayed 10s
 
-        TimerAction(period=13.0, actions=[ekf, rtab_odom, rtab_slam, rtab_loc]),
+        TimerAction(period=13.0, actions=[ekf, rtab_slam, rtab_loc]),
         TimerAction(period=16.0, actions=[nav2]),
     ])

@@ -1,0 +1,97 @@
+# =============================================================================
+# rtabmap_params.yaml
+# RTAB-Map config for simulated RGB-D + lidar rover
+# Tuned for Gazebo Fortress, indoor/structured environments
+# =============================================================================
+
+# -----------------------------------------------------------------------------
+# RTAB-Map SLAM node
+# Odometry source: wheel encoders + IMU via EKF (external, not visual odom)
+# -----------------------------------------------------------------------------
+rtabmap:
+  ros__parameters:
+    # Frames
+    frame_id: base_link
+    odom_frame_id: odom
+    map_frame_id: map
+    publish_tf: true
+    tf_delay: 0.05
+    tf_tolerance: 0.1
+
+    # Inputs — depth camera for loop closure, lidar for occupancy grid
+    # Odometry comes externally from EKF (wheel encoders + IMU)
+    subscribe_depth: true
+    subscribe_rgb: true
+    subscribe_scan: true
+    subscribe_stereo: false
+    subscribe_rgbd: false
+    subscribe_odom_info: false       # no visual odom info
+
+    # Tell RTAB-Map NOT to publish its own odom TF — EKF owns odom->base_link
+    publish_tf: false                # map->odom TF only, EKF does odom->base
+    wait_for_transform: 0.2
+
+    # Detection rate — 1 Hz is plenty for mapping, keeps CPU low
+    Rtabmap/DetectionRate: "1"
+    Rtabmap/TimeThr: "0"             # no time limit per iteration
+
+    # Memory
+    Mem/IncrementalMemory: "true"    # SLAM mode (set false for localization)
+    Mem/InitWMWithAllNodes: "false"
+    Mem/STMSize: "30"                # short-term memory size (nodes)
+    Mem/RehearsalSimilarity: "0.45"
+    Mem/BadSignaturesIgnored: "true"
+
+    # Loop closure
+    Rtabmap/LoopRatio: "0"
+    RGBD/LoopClosureReactivation: "true"
+    RGBD/MaxLoopClosureDistance: "0"  # no distance limit
+
+    # Local loop closure (nearby nodes) — useful in small arenas
+    RGBD/LocalRadius: "5.0"           # metres
+    RGBD/LocalImmunizationRatio: "0.5"
+
+    # Proximity detection (graph-based loop closure on lidar)
+    RGBD/ProximityBySpace: "true"
+    RGBD/ProximityMaxGraphDepth: "0"
+    RGBD/ProximityPathMaxNeighbors: "1"
+
+    # Occupancy grid from lidar (Grid/Sensor=0)
+    # Lidar gives cleaner 2D maps than depth projection for Nav2
+    Grid/Sensor: "0"                  # 0=lidar, 1=depth camera
+    Grid/RangeMax: "0"                # use full lidar range
+    Grid/CellSize: "0.05"             # 5 cm resolution
+    Grid/ClusterRadius: "0.1"
+    Grid/GroundIsObstacle: "false"
+    Grid/NormalsSegmentation: "false" # flat ground, skip normal estimation
+    Grid/FootprintRadius: "0.45"      # ~robot inscribed radius, clears self
+
+    # 3D cloud map (for RViz visualisation)
+    cloud_decimation: 4              # keep 1 in 4 points — saves memory
+    cloud_max_depth: 4.0             # metres
+    cloud_min_depth: 0.2
+    cloud_voxel_size: 0.05
+
+    # Map publishing
+    map_always_update: false
+    map_empty_ray_tracing: true
+    map_filter_radius: 0.0
+    map_filter_angle: 30.0
+    map_cleanup: true
+
+    # Appearance-based loop closure (visual)
+    Vis/MinInliers: "10"
+    Vis/MaxFeatures: "600"
+    Vis/FeatureType: "9"             # GFTT/BRIEF — fast in sim
+    Vis/InlierDistance: "0.1"
+    Vis/EstimationType: "1"          # 1=PnP (monocular-safe)
+
+    # ICP refinement (applied to lidar loop closures)
+    Icp/MaxTranslation: "1.0"
+    Icp/MaxRotation: "0.78"          # 45 deg
+    Icp/VoxelSize: "0.05"
+    Icp/Iterations: "30"
+    Icp/PointToPlane: "false"        # 2D lidar — no normals
+
+    # Logging — set to 0 for release, 4 for debug
+    log_to_rosout_level: 4
