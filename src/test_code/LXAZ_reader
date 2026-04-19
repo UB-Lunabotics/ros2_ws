@@ -17,7 +17,7 @@ class CmdVelReader(Node):
         angular_z = msg.angular.z
 
         # Hardcoded into a string
-        hardcoded_string = f"linear_x={linear_x},angular_z={angular_z}"
+        hardcoded_string = f"LX = {linear_x}, AZ = {angular_z}"
 
         self.get_logger().info(f'Received: {hardcoded_string}')
 
