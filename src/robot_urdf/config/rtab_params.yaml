@@ -22,7 +22,8 @@ rtabmap:
     # Odometry comes externally from EKF (wheel encoders + IMU)
     subscribe_depth: true
     subscribe_rgb: true
-    subscribe_scan: true
+    subscribe_scan: false
+    subscribe_scan_cloud: true
     subscribe_stereo: false
     subscribe_rgbd: false
     subscribe_odom_info: false       # no visual odom info
@@ -58,7 +59,7 @@ rtabmap:
 
     # Occupancy grid from lidar (Grid/Sensor=0)
     # Lidar gives cleaner 2D maps than depth projection for Nav2
-    Grid/Sensor: "0"                  # 0=lidar, 1=depth camera
+    Grid/Sensor: "1"                  # 0=lidar, 1=depth camera
     Grid/RangeMax: "0"                # use full lidar range
     Grid/CellSize: "0.05"             # 5 cm resolution
     Grid/ClusterRadius: "0.1"

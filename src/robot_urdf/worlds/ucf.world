@@ -3,9 +3,15 @@
   <world name="arena">
 
     <!-- Physics -->
-    <physics name="1ms" type="ignored">
-      <max_step_size>0.001</max_step_size>
+    <physics name="1ms" type="ode">
+      <max_step_size>0.004</max_step_size>
       <real_time_factor>1.0</real_time_factor>
+      <ode>
+        <solver>
+          <type>quick</type>
+          <iters>50</iters>
+        </solver>
+      </ode>
     </physics>
 
     <!-- Plugins -->
@@ -40,6 +46,20 @@
               <size>20 20</size>
             </plane>
           </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>1.0</mu>      
+                <mu2>1.0</mu2>    
+              </ode>
+            </friction>
+            <contact>
+              <ode>
+                <kp>1e5</kp>      
+                <kd>10.0</kd>     
+              </ode>
+            </contact>
+          </surface>
         </collision>
         <visual name="visual">
           <geometry>

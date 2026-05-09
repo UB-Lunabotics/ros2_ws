@@ -95,6 +95,7 @@ def generate_launch_description():
             # Simulated RGB-D camera
             f"{RGB_TOPIC}@sensor_msgs/msg/Image[gz.msgs.Image",
             f"{DEPTH_TOPIC}@sensor_msgs/msg/Image[gz.msgs.Image",
+            "/camera/color/points@sensor_msgs/msg/PointCloud2[gz.msgs.PointCloudPacked",
             f"{INFO_TOPIC}@sensor_msgs/msg/CameraInfo[gz.msgs.CameraInfo",
             f"{SCAN_TOPIC}@sensor_msgs/msg/LaserScan[gz.msgs.LaserScan",
             "/imu@sensor_msgs/msg/Imu[gz.msgs.IMU",
@@ -124,14 +125,19 @@ def generate_launch_description():
     # -------------------------------------------------------------------------
     rtab_cfg = os.path.join(pkg, "config", "rtabmap_params.yaml")
     _common = {
-        "use_sim_time": True, "subscribe_depth": True, "subscribe_rgb": True,
-        "frame_id": "base_link", "odom_frame_id": "odom", "approx_sync": True,
+        "use_sim_time": True, 
+        "subscribe_depth": True, 
+        "subscribe_rgb": True,
+        "frame_id": "base_link", 
+        "odom_frame_id": "odom", 
+        "approx_sync": True,
     }
     _remaps = [
         ("rgb/image",       RGB_TOPIC),
         ("depth/image",     DEPTH_TOPIC),
         ("rgb/camera_info", INFO_TOPIC),
-        ("odom",            ODOM_TOPIC),   # /odometry/filtered from EKF
+        ("odom",            ODOM_TOPIC),   # /odometry/filtered from EKF\
+        ("scan_cloud",      "/camera/color/points"),
     ]
 
     rtab_slam = Node(
@@ -139,7 +145,8 @@ def generate_launch_description():
         parameters=[rtab_cfg, {
             **_common,
             "map_frame_id": "map",
-            "subscribe_scan": True,
+            "subscribe_scan": False,
+            "subscribe_scan_cloud": True,
             "database_path": "~/.ros/rtabmap.db",
             "Mem/IncrementalMemory": "true", 
             "Mem/InitWMWithAllNodes": "false",

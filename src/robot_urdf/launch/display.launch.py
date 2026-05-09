@@ -1,5 +1,5 @@
 import os
-
+import xacro
 from ament_index_python.packages import get_package_share_directory
 from launch import LaunchDescription
 from launch_ros.actions import Node
@@ -7,10 +7,9 @@ from launch_ros.actions import Node
 
 def generate_launch_description():
     pkg_share = get_package_share_directory("robot_urdf")
-    urdf_path = os.path.join(pkg_share, "urdf", "Assem1.urdf")
+    urdf_path = os.path.join(pkg_share, "urdf", "robot.urdf.xacro")
 
-    with open(urdf_path, "r", encoding="utf-8") as urdf_file:
-        robot_description = urdf_file.read()
+    robot_description = xacro.process_file(urdf_path).toxml()
 
     joint_state_publisher_gui = Node(
         package="joint_state_publisher_gui",
