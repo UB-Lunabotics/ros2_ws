@@ -213,6 +213,6 @@ def generate_launch_description():
 
         spawn,  # delayed 10s
 
-        TimerAction(period=13.0, actions=[ekf, rtab_slam, rtab_loc]),
-        TimerAction(period=16.0, actions=[nav2]),
+        #TimerAction(period=13.0, actions=[ekf, rtab_slam, rtab_loc]),
+        #TimerAction(period=16.0, actions=[nav2]),
     ])
