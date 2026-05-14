@@ -1,0 +1,30 @@
+running egg_info
+writing ../../build/rover_autonomy/rover_autonomy.egg-info/PKG-INFO
+writing dependency_links to ../../build/rover_autonomy/rover_autonomy.egg-info/dependency_links.txt
+writing entry points to ../../build/rover_autonomy/rover_autonomy.egg-info/entry_points.txt
+writing requirements to ../../build/rover_autonomy/rover_autonomy.egg-info/requires.txt
+writing top-level names to ../../build/rover_autonomy/rover_autonomy.egg-info/top_level.txt
+reading manifest file '../../build/rover_autonomy/rover_autonomy.egg-info/SOURCES.txt'
+writing manifest file '../../build/rover_autonomy/rover_autonomy.egg-info/SOURCES.txt'
+running build
+running build_py
+copying rover_autonomy/__init__.py -> /home/wade/lunabotics_ws/build/rover_autonomy/build/lib/rover_autonomy
+copying rover_autonomy/brain_node.py -> /home/wade/lunabotics_ws/build/rover_autonomy/build/lib/rover_autonomy
+copying rover_autonomy/mock_rover.py -> /home/wade/lunabotics_ws/build/rover_autonomy/build/lib/rover_autonomy
+running install
+running install_lib
+copying /home/wade/lunabotics_ws/build/rover_autonomy/build/lib/rover_autonomy/mock_rover.py -> /home/wade/lunabotics_ws/install/rover_autonomy/lib/python3.10/site-packages/rover_autonomy
+byte-compiling /home/wade/lunabotics_ws/install/rover_autonomy/lib/python3.10/site-packages/rover_autonomy/mock_rover.py to mock_rover.cpython-310.pyc
+running install_data
+copying resource/rover_autonomy -> /home/wade/lunabotics_ws/install/rover_autonomy/share/ament_index/resource_index/packages
+copying package.xml -> /home/wade/lunabotics_ws/install/rover_autonomy/share/rover_autonomy
+copying launch/launch_robot.launch.py -> /home/wade/lunabotics_ws/install/rover_autonomy/share/rover_autonomy/launch
+copying urdf/assembled_robot.urdf -> /home/wade/lunabotics_ws/install/rover_autonomy/share/rover_autonomy/urdf
+copying config/ros2_controllers.yaml -> /home/wade/lunabotics_ws/install/rover_autonomy/share/rover_autonomy/config
+running install_egg_info
+removing '/home/wade/lunabotics_ws/install/rover_autonomy/lib/python3.10/site-packages/rover_autonomy-0.0.0-py3.10.egg-info' (and everything under it)
+Copying ../../build/rover_autonomy/rover_autonomy.egg-info to /home/wade/lunabotics_ws/install/rover_autonomy/lib/python3.10/site-packages/rover_autonomy-0.0.0-py3.10.egg-info
+running install_scripts
+Installing brain_node script to /home/wade/lunabotics_ws/install/rover_autonomy/lib/rover_autonomy
+Installing mock_rover script to /home/wade/lunabotics_ws/install/rover_autonomy/lib/rover_autonomy
+writing list of installed files to '/home/wade/lunabotics_ws/build/rover_autonomy/install.log'

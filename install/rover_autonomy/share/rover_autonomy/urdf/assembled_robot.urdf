@@ -1,0 +1,335 @@
+<?xml version="1.0"?>
+<robot name="assembled_rover">
+
+  <!-- ROOT LINK -->
+  <link name="base_link">
+    <visual>
+      <origin xyz="0 0 0.15" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.80 0.50 0.30"/>
+      </geometry>
+      <material name="dark_gray">
+        <color rgba="0.25 0.25 0.25 1.0"/>
+      </material>
+    </visual>
+
+    <collision>
+      <origin xyz="0 0 0.15" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.80 0.50 0.30"/>
+      </geometry>
+    </collision>
+
+    <!-- Required inertial for root link in Gazebo -->
+    <inertial>
+      <origin xyz="0 0 0.15" rpy="0 0 0"/>
+      <mass value="13.897"/>
+      <inertia ixx="0.30" ixy="0.0" ixz="0.0"
+               iyy="0.20" iyz="0.0" izz="0.25"/>
+    </inertial>
+  </link>
+
+  <!-- Wheels – safe inertia (cylinder-like) -->
+  <link name="WheelFR">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="2.152"/>
+      <inertia ixx="0.012" ixy="0.0" ixz="0.0"
+               iyy="0.018" iyz="0.0" izz="0.012"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <cylinder length="0.10" radius="0.15"/>
+      </geometry>
+      <material name="red">
+        <color rgba="0.9 0.1 0.1 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <cylinder length="0.10" radius="0.15"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="wheel_fr_joint" type="continuous">
+    <parent link="base_link"/>
+    <child link="WheelFR"/>
+    <origin xyz="0.35 -0.25 -0.15" rpy="1.5708 0 0"/>
+    <axis xyz="0 1 0"/>
+  </joint>
+
+  <link name="WheelFL">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="2.152"/>
+      <inertia ixx="0.012" ixy="0.0" ixz="0.0"
+               iyy="0.018" iyz="0.0" izz="0.012"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <cylinder length="0.10" radius="0.15"/>
+      </geometry>
+      <material name="green">
+        <color rgba="0.1 0.9 0.1 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <cylinder length="0.10" radius="0.15"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="wheel_fl_joint" type="continuous">
+    <parent link="base_link"/>
+    <child link="WheelFL"/>
+    <origin xyz="0.35 0.25 -0.15" rpy="1.5708 0 0"/>
+    <axis xyz="0 1 0"/>
+  </joint>
+
+  <link name="WheelRR">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="2.152"/>
+      <inertia ixx="0.012" ixy="0.0" ixz="0.0"
+               iyy="0.018" iyz="0.0" izz="0.012"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <cylinder length="0.10" radius="0.15"/>
+      </geometry>
+      <material name="blue">
+        <color rgba="0.1 0.1 0.9 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <cylinder length="0.10" radius="0.15"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="wheel_rr_joint" type="continuous">
+    <parent link="base_link"/>
+    <child link="WheelRR"/>
+    <origin xyz="-0.25 -0.25 -0.15" rpy="1.5708 0 0"/>
+    <axis xyz="0 1 0"/>
+  </joint>
+
+  <link name="WheelRL">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="2.152"/>
+      <inertia ixx="0.012" ixy="0.0" ixz="0.0"
+               iyy="0.018" iyz="0.0" izz="0.012"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <cylinder length="0.10" radius="0.15"/>
+      </geometry>
+      <material name="yellow">
+        <color rgba="0.9 0.9 0.1 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <cylinder length="0.10" radius="0.15"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="wheel_rl_joint" type="continuous">
+    <parent link="base_link"/>
+    <child link="WheelRL"/>
+    <origin xyz="-0.25 0.25 -0.15" rpy="1.5708 0 0"/>
+    <axis xyz="0 1 0"/>
+  </joint>
+
+  <!-- Left Arm -->
+  <link name="ArmL">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="0.315"/>
+      <inertia ixx="0.006" ixy="0.0" ixz="0.0"
+               iyy="0.006" iyz="0.0" izz="0.006"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.50 0.12 0.12"/>
+      </geometry>
+      <material name="cyan">
+        <color rgba="0.0 0.8 0.9 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.50 0.12 0.12"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="arm_l_joint" type="revolute">
+    <parent link="base_link"/>
+    <child link="ArmL"/>
+    <origin xyz="0.30 0.20 0.35" rpy="1.5708 0 1.0"/>
+    <axis xyz="0 1 0"/>
+    <limit lower="-1.57" upper="1.57" effort="50" velocity="1.0"/>
+  </joint>
+
+  <!-- Left Drum -->
+  <link name="DrumRevL">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="10.1"/>
+      <inertia ixx="0.16" ixy="0.0" ixz="0.0"
+               iyy="0.32" iyz="0.0" izz="0.16"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <cylinder length="0.60" radius="0.25"/>
+      </geometry>
+      <material name="orange">
+        <color rgba="1.0 0.6 0.1 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <cylinder length="0.60" radius="0.25"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="drum_l_joint" type="continuous">
+    <parent link="ArmL"/>
+    <child link="DrumRevL"/>
+    <origin xyz="0 0.30 0" rpy="0 1.5708 0"/>
+    <axis xyz="0 1 0"/>
+  </joint>
+
+  <!-- Right Arm -->
+  <link name="ArmR">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="0.568"/>
+      <inertia ixx="0.009" ixy="0.0" ixz="0.0"
+               iyy="0.009" iyz="0.0" izz="0.009"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.55 0.14 0.14"/>
+      </geometry>
+      <material name="magenta">
+        <color rgba="0.9 0.1 0.9 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.55 0.14 0.14"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="arm_r_joint" type="continuous">
+    <parent link="base_link"/>
+    <child link="ArmR"/>
+    <origin xyz="0.30 -0.20 0.35" rpy="1.5708 0 1.0"/>
+    <axis xyz="0 1 0"/>
+  </joint>
+
+  <!-- Right Drum -->
+  <link name="DrumRevR">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="10.1"/>
+      <inertia ixx="0.16" ixy="0.0" ixz="0.0"
+               iyy="0.32" iyz="0.0" izz="0.16"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <cylinder length="0.60" radius="0.25"/>
+      </geometry>
+      <material name="lime">
+        <color rgba="0.6 1.0 0.2 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <cylinder length="0.60" radius="0.25"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="drum_r_joint" type="continuous">
+    <parent link="ArmR"/>
+    <child link="DrumRevR"/>
+    <origin xyz="0 -0.30 0" rpy="0 1.5708 0"/>
+    <axis xyz="0 1 0"/>
+  </joint>
+
+  <!-- ============================================= -->
+  <!--          ros2_control configuration           -->
+  <!-- ============================================= -->
+
+  <!-- ROS2_CONTROL HARDWARE INTERFACE -->
+  <ros2_control name="GazeboSystem" type="system">
+    <hardware>
+      <plugin>gz_ros2_control/GzSimSystem</plugin>   <!-- FIXED HERE -->
+    </hardware>
+
+    <!-- Left side wheels -->
+    <joint name="wheel_fl_joint">
+      <command_interface name="velocity"/>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+      <state_interface name="effort"/>
+    </joint>
+    <joint name="wheel_rl_joint">
+      <command_interface name="velocity"/>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+      <state_interface name="effort"/>
+    </joint>
+
+    <!-- Right side wheels -->
+    <joint name="wheel_fr_joint">
+      <command_interface name="velocity"/>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+      <state_interface name="effort"/>
+    </joint>
+    <joint name="wheel_rr_joint">
+      <command_interface name="velocity"/>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+      <state_interface name="effort"/>
+    </joint>
+  </ros2_control>
+
+  <!-- Gazebo plugin - keep this as-is since it loaded -->
+  <gazebo>
+    <plugin filename="libgz_ros2_control-system.so" name="gz_ros2_control::GazeboSimROS2ControlPlugin">
+      <parameters>$(find rover_autonomy)/config/ros2_controllers.yaml</parameters>
+      <robot_param>robot_description</robot_param>
+      <robot_param_node>robot_state_publisher</robot_param_node>
+      <update_rate>100</update_rate>
+    </plugin>
+  </gazebo>
+  
+</robot>
