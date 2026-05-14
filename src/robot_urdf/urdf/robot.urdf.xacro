@@ -100,7 +100,7 @@
   <joint name="base_footprint_joint" type="fixed">
     <parent link="base_footprint"/>
     <child  link="base_link"/>
-    <origin xyz="0 0 ${base_z}" rpy="0 0 0.707"/>
+    <origin xyz="-3 -3 ${base_z}" rpy="0 0 0.707"/>
   </joint>
 
   <!-- =========================================================
@@ -190,7 +190,7 @@
   <joint name="zed2i_camera_joint" type="fixed">
     <parent link="base_link"/>
     <child  link="zed2i_camera_link"/>
-    <origin xyz="0.4676 0.0 ${base_height/2 + 0.0165}" rpy="0 0 0"/>
+    <origin xyz="0.4676 0.0 ${base_height/2 + 0.2165}" rpy="0 0.174532925 0"/>
   </joint>
 
   <!-- Camera centre (optical reference point between the two lenses) -->
