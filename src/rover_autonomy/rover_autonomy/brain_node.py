@@ -3,6 +3,7 @@ from rclpy.node import Node
 from std_msgs.msg import Float32, Bool
 from geometry_msgs.msg import PoseStamped
 from nav2_simple_commander.robot_navigator import BasicNavigator, TaskResult
+import time
 
 class LunaboticsBrain(Node):
     def __init__(self):
@@ -48,7 +49,6 @@ class LunaboticsBrain(Node):
             while not self.nav.isTaskComplete():
                 pass
             self.get_logger().info("Dumping...")
-            import time
             time.sleep(5)
 
             # STATE 3: Navigate to excavation center and dig
