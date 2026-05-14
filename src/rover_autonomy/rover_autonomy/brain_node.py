@@ -39,7 +39,7 @@ class LunaboticsBrain(Node):
         while rclpy.ok():
             # STATE 1: Go to Dig Site
             self.get_logger().info("Moving to Dig Site...")
-            dig_goal = self.create_pose(2.0, 1.0) # Change to your actual coords
+            dig_goal = self.create_pose(3.0, 4.0) # Change to your actual coords
             self.nav.goToPose(dig_goal)
             
             while not self.nav.isTaskComplete():
