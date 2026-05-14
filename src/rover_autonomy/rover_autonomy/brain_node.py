@@ -59,7 +59,7 @@ class LunaboticsBrain(Node):
             self.get_logger().info("Bin Full! Moving to Offload...")
 
             # STATE 3: Go to Offload Site
-            offload_goal = self.create_pose(0.0, 0.0)
+            offload_goal = self.create_pose(6.80, 3.57)  # Berm Zone center
             self.nav.goToPose(offload_goal)
             
             while not self.nav.isTaskComplete():
