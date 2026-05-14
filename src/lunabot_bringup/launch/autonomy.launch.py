@@ -70,6 +70,27 @@ def generate_launch_description():
         }.items()
     ) if zed_available else LogInfo(msg='[BRINGUP] ZED rear camera skipped...')
 
+    # AprilTag detector
+    apriltag_node = Node(
+        package='apriltag_ros',
+        executable='apriltag_ros_continuous_node',
+        name='apriltag_ros',
+        remappings=[
+            ('image_rect',  '/zed_front/rgb/image_rect_color'),
+            ('camera_info', '/zed_front/rgb/camera_info'),
+        ],
+        parameters=[
+            os.path.join(bringup_dir, 'config', 'apriltag_config.yaml')
+        ]
+    )
+
+    # Pose initializer
+    pose_initializer = Node(
+        package='rover_autonomy',
+        executable='pose_initializer',
+        name='pose_initializer',
+    )
+
     # IR Sensor Publisher
     # TODO: confirm serial port with electrical team
     # TODO: must be different port from ESP32 bridge
@@ -210,6 +231,8 @@ def generate_launch_description():
         zed_rear,
         ir_sensor,
         esp32_bridge,
+        apriltag_node,
+        pose_initializer,
 
         # t=3s
         localization_layer,

@@ -1,0 +1,12 @@
+tag_family:        36h11
+tag_border:        1
+publish_tf:        true
+transport_hint:    raw
+startup_ms_delay:  100
+
+standalone_tags:
+  [
+    {id: 0, size: 0.15, name: "tag_start"},
+    {id: 1, size: 0.15, name: "tag_middle"},
+    {id: 2, size: 0.15, name: "tag_end"},
+  ]
