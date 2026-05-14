@@ -287,6 +287,8 @@
       <child_frame_id>base_footprint</child_frame_id>
       <max_linear_acceleration>10.0</max_linear_acceleration>
       <max_angular_acceleration>10.0</max_angular_acceleration>
+      <max_angular_velocity>0.3</max_angular_velocity>
+      <max_linear_velocity>1.0</max_linear_velocity>
       <publish_odom>true</publish_odom>
       <publish_odom_tf>true</publish_odom_tf>
       <publish_wheel_tf>false</publish_wheel_tf>
