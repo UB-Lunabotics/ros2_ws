@@ -33,45 +33,37 @@ class LunaboticsBrain(Node):
         return pose
 
     def run_autonomy_loop(self):
-        # Wait for Nav2 to be ready
-        # self.nav.waitUntilNav2Active()
+        # STATE 1: Dig immediately in starting zone
+        self.get_logger().info("Digging in starting zone...")
+        self.bin_full = False
+        while not self.bin_full:
+            self.dig_pub.publish(Bool(data=True))
+            rclpy.spin_once(self, timeout_sec=0.1)
+        self.dig_pub.publish(Bool(data=False))
 
         while rclpy.ok():
-            # STATE 1: Go to Dig Site
-            self.get_logger().info("Moving to Dig Site...")
-            dig_goal = self.create_pose(3.0, 4.0) # Change to your actual coords
-            self.nav.goToPose(dig_goal)
-            
+            # STATE 2: Navigate to berm and dump
+            self.get_logger().info("Navigating to berm...")
+            self.nav.goToPose(self.create_pose(6.80, 3.57))
             while not self.nav.isTaskComplete():
-                pass # Driving...
+                pass
+            self.get_logger().info("Dumping...")
+            import time
+            time.sleep(5)
 
-            # STATE 2: Digging
-            self.get_logger().info("Starting to Dig...")
+            # STATE 3: Navigate to excavation center and dig
+            self.get_logger().info("Navigating to dig site...")
+            self.nav.goToPose(self.create_pose(2.0, 2.285))
+            while not self.nav.isTaskComplete():
+                pass
+            self.get_logger().info("Digging...")
             self.bin_full = False
             while not self.bin_full:
-                # Publish 'True' to start the motors
                 self.dig_pub.publish(Bool(data=True))
-                # Spin once to check IR sensor data
                 rclpy.spin_once(self, timeout_sec=0.1)
-            
-            # Stop Digging
             self.dig_pub.publish(Bool(data=False))
-            self.get_logger().info("Bin Full! Moving to Offload...")
 
-            # STATE 3: Go to Offload Site
-            offload_goal = self.create_pose(6.80, 3.57)  # Berm Zone center
-            self.nav.goToPose(offload_goal)
-            
-            while not self.nav.isTaskComplete():
-                pass # Driving to hopper...
-
-            # STATE 4: Offloading (Timer based)
-            self.get_logger().info("Offloading...")
-            # Trigger your offload mechanism here
-            import time
-            time.sleep(5) # Simulate offload time
-            
-            self.get_logger().info("Cycle Complete. Restarting...")
+            self.get_logger().info("Cycle complete. Repeating...")
 
 def main():
     rclpy.init()
