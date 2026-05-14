@@ -18,7 +18,7 @@ from launch_ros.actions import Node
 PKG          = "robot_urdf"
 URDF         = "robot.urdf.xacro"      # relative to <pkg>/urdf/
 WORLD        = "ucf.world"             # relative to <pkg>/worlds/
-SPAWN        = (0.0, 0.0, 0.05, 0.0)  # x, y, z, yaw
+SPAWN        = (0.0, 0.0, 0.1779, 0.0)  # x, y, z, yaw
 
 # Gazebo camera bridge topics — must match your SDF sensor <topic> names
 RGB_TOPIC    = "/camera/color/image"

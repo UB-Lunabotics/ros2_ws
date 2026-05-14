@@ -2,17 +2,6 @@
 <sdf version="1.8">
   <world name="arena">
 
-    <!-- Physics -->
-    <physics name="1ms" type="ode">
-      <max_step_size>0.004</max_step_size>
-      <real_time_factor>1.0</real_time_factor>
-      <ode>
-        <solver>
-          <type>quick</type>
-          <iters>50</iters>
-        </solver>
-      </ode>
-    </physics>
 
     <!-- Plugins -->
     <plugin filename="ignition-gazebo-physics-system"
@@ -36,7 +25,6 @@
     </light>
 
     <!-- Ground plane -->
-    <!--
     <model name="ground_plane">
       <static>true</static>
       <link name="link">
@@ -50,14 +38,14 @@
           <surface>
             <friction>
               <ode>
-                <mu>1.0</mu>      
-                <mu2>0.01</mu2>    
+                <mu1>0.3</mu1>      
+                <mu2>0.3</mu2>    
               </ode>
             </friction>
             <contact>
               <ode>
-                <kp>1e5</kp>      
-                <kd>10.0</kd>     
+                <kp>1e6</kp>      
+                <kd>1.0</kd>     
               </ode>
             </contact>
           </surface>
@@ -76,10 +64,10 @@
         </visual>
       </link>
     </model>
-    <-->
+    
 
     <!-- Ground Box -->
-    <model name="ground_box">
+    <!--><model name="ground_box">
       <static>true</static>
       <pose>0 0 -0.5 0 0 0</pose>
       <link name="link">
@@ -94,7 +82,7 @@
           </material>
         </visual>
       </link>
-    </model>
+    </model><-->
 
     <!-- ================================================================== -->
     <!-- Boundary walls  (arena: 6.88 m x 5.0 m, centered at origin)        -->
