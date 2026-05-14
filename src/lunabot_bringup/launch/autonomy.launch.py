@@ -162,6 +162,8 @@ def generate_launch_description():
             'odom_topic':           '/zed_front/odom',
             'params_file':          rtabmap_params_file,
             'publish_tf':           'true',
+            'rviz':                'false',
+            'rtabmapviz':          'false',
         }.items()
     )
 
