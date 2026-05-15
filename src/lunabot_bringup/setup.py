@@ -2,7 +2,7 @@ import os
 from glob import glob
 from setuptools import setup
 
-package_name = 'lunabot_bringup'
+package_name = 'rover_autonomy'
 
 setup(
     name=package_name,
