@@ -75,7 +75,7 @@ def generate_launch_description():
     # AprilTag detector
     apriltag_node = Node(
         package='apriltag_ros',
-        executable='apriltag_ros_continuous_node',
+        executable='apriltag_node',
         name='apriltag_ros',
         remappings=[
             ('image_rect',  '/zed_front/zed_node/rgb/color/rect/image'),
