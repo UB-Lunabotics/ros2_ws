@@ -59,6 +59,7 @@ def generate_launch_description():
     ) if zed_available else LogInfo(msg='[BRINGUP] ZED wrapper not found, skipping cameras...')
 
     # ZED2i Rear Camera
+    '''  # rear camera currently unused, can be enabled if needed for better rear localization or obstacle detection
     zed_rear = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(
             os.path.join(zed_wrapper_dir, 'launch', 'zed_camera.launch.py')
@@ -69,6 +70,7 @@ def generate_launch_description():
             'use_sim_time': use_sim_time,
         }.items()
     ) if zed_available else LogInfo(msg='[BRINGUP] ZED rear camera skipped...')
+    '''
 
     # AprilTag detector
     apriltag_node = Node(
@@ -76,8 +78,8 @@ def generate_launch_description():
         executable='apriltag_ros_continuous_node',
         name='apriltag_ros',
         remappings=[
-            ('image_rect',  '/zed_front/rgb/image_rect_color'),
-            ('camera_info', '/zed_front/rgb/camera_info'),
+            ('image_rect',  '/zed_front/zed_node/rgb/color/rect/image'),
+            ('camera_info', '/zed_front/zed_node/rgb/color/rect/camera_info'),
         ],
         parameters=[
             os.path.join(bringup_dir, 'config', 'apriltag_config.yaml')
@@ -155,11 +157,11 @@ def generate_launch_description():
         launch_arguments={
             'rtabmap_args':         '--delete_db_on_start',
             'use_sim_time':         use_sim_time,
-            'rgb_topic':            '/zed/zed_node/rgb/color/rect/image',
-            'depth_topic':          '/zed/zed_node/depth/depth_registered',
-            'camera_info_topic':    '/zed/zed_node/rgb/color/rect/camera_info',
+            'rgb_topic':            '/zed_front/zed_node/rgb/color/rect/image',
+            'depth_topic':          '/zed_front/zed_node/depth/depth_registered',
+            'camera_info_topic':    '/zed_front/zed_node/rgb/color/rect/camera_info',
             'frame_id':             'base_link',
-            'odom_topic':           '/zed/zed_node/odom',
+            'odom_topic':           '/zed_front/zed_node/odom',
             'params_file':          rtabmap_params_file,
             'publish_tf':           'true',
             'rviz':                'false',
@@ -230,7 +232,7 @@ def generate_launch_description():
         # t=0s
         LogInfo(msg='[BRINGUP] Starting UB Lunabotics autonomy stack...'),
         zed_front,
-        zed_rear,
+        #zed_rear,
         ir_sensor,
         esp32_bridge,
         apriltag_node,
