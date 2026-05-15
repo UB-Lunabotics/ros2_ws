@@ -10,6 +10,7 @@ from launch.event_handlers import OnProcessStart
 from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch.substitutions import Command, FindExecutable, LaunchConfiguration
 from launch_ros.actions import Node
+from launch_ros.parameter_descriptions import ParameterValue
 
 
 # ---------------------------------------------------------------------------
@@ -26,7 +27,7 @@ DEPTH_TOPIC  = "/camera/color/depth_image"
 INFO_TOPIC   = "/camera/color/camera_info"
 
 # Odometry topics
-WHEEL_ODOM   = "/odom"           # diff drive plugin output
+WHEEL_ODOM   = "/odom"               # diff drive plugin output
 ODOM_TOPIC   = "/odometry/filtered"  # EKF output — consumed by RTAB-Map/Nav2
 
 SCAN_TOPIC   = "/scan"
@@ -46,11 +47,15 @@ def generate_launch_description():
         package="robot_state_publisher",
         executable="robot_state_publisher",
         parameters=[{
-            "robot_description": Command([
-                FindExecutable(name="xacro"), " ",
-                os.path.join(pkg, "urdf", URDF),
-            ]),
+            "robot_description": ParameterValue(
+                Command([
+                    FindExecutable(name="xacro"), " ",
+                    os.path.join(pkg, "urdf", URDF),
+                ]),
+                value_type=str  # ← forces string, bypasses YAML parser
+            ),
             "use_sim_time": True,
+            "publish_frequency": 50.0,
         }],
     )
 
@@ -86,13 +91,18 @@ def generate_launch_description():
     bridge = Node(
         package="ros_gz_bridge",
         executable="parameter_bridge",
-        parameters=[{"use_sim_time": True}],
+        parameters=[
+            {"use_sim_time": True},
+            {
+                "qos_overrides./tf_static.publisher.durability": "transient_local",
+                "qos_overrides./tf_static.publisher.reliability": "reliable",
+            },
+        ],
         arguments=[
             "/clock@rosgraph_msgs/msg/Clock[gz.msgs.Clock",
             "/cmd_vel@geometry_msgs/msg/Twist]gz.msgs.Twist",
             f"{WHEEL_ODOM}@nav_msgs/msg/Odometry[gz.msgs.Odometry",
             "/joint_states@sensor_msgs/msg/JointState[gz.msgs.Model",
-            # Simulated RGB-D camera
             f"{RGB_TOPIC}@sensor_msgs/msg/Image[gz.msgs.Image",
             f"{DEPTH_TOPIC}@sensor_msgs/msg/Image[gz.msgs.Image",
             "/camera/color/points@sensor_msgs/msg/PointCloud2[gz.msgs.PointCloudPacked",
@@ -212,7 +222,7 @@ def generate_launch_description():
         rsp, gazebo, bridge, rviz_node,
 
         spawn,  # delayed 10s
-
+        #TimerAction(period=13.0, actions=[ekf])
         TimerAction(period=13.0, actions=[ekf, rtab_slam, rtab_loc]),
         #TimerAction(period=16.0, actions=[nav2]),
     ])

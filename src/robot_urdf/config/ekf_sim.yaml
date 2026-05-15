@@ -22,27 +22,57 @@ ekf_filter_node:
     # Topic: /odom  (nav_msgs/Odometry)
     # -------------------------------------------------------------------------
     odom0: /odom
-    odom0_config: [true,  true,  false,   # x, y, z
-                   false, false, true,    # roll, pitch, yaw
-                   true,  true,  false,   # vx, vy, vz
-                   false, false, true,    # vroll, vpitch, vyaw
-                   false, false, false]   # ax, ay, az
+    odom0_config: [true,  true,  false,  # x, y, z  (no position from IMU)
+                   false, false, false,  # roll, pitch, yaw
+                   true,  true,  false,  # vx, vy, vz
+                   false, false, false,  # vroll, vpitch, vyaw
+                   false, false, false]  # ax, ay, az  (ignore Z accel — gravity)
+    odom0_noise_covariance: [0.1,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,
+                             0.0,  0.1,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,
+                             0.0,  0.0,  1e6,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,
+                             0.0,  0.0,  0.0,  1e6,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,
+                             0.0,  0.0,  0.0,  0.0,  1e6,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,
+                             0.0,  0.0,  0.0,  0.0,  0.0,  0.2,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,
+                             0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.05, 0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,
+                             0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.05, 0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,
+                             0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  1e6,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,
+                             0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  1e6,  0.0,  0.0,  0.0,  0.0,  0.0,
+                             0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  1e6,  0.0,  0.0,  0.0,  0.0,
+                             0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.2,  0.0,  0.0,  0.0,
+                             0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  1e6,  0.0,  0.0,
+                             0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  1e6,  0.0,
+                             0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  1e6]
     odom0_differential: false
     odom0_relative: false
     odom0_queue_size: 10
+
+    # RTAB visual odom — acts as ZED SDK VIO equivalent
+    odom1: /rtabmap/odom
+    odom1_config: [true,  true,  false,
+                   false, false, true,
+                   true,  true,  false,
+                   false, false, true,
+                   false, false, false]
+    odom1_differential: false
+    odom1_relative: false
 
     # -------------------------------------------------------------------------
     # IMU from Gazebo IMU sensor
     # Topic: /imu  (sensor_msgs/Imu)
     # -------------------------------------------------------------------------
-    imu0: /zed_front/imu/data
+    imu0: /imu
     imu0_config: [false, false, false,    # x, y, z  (no position from IMU)
                   false, false, true,     # roll, pitch, yaw
                   false, false, false,    # vx, vy, vz
-                  true,  true,  true,     # vroll, vpitch, vyaw
+                  false, false, true,     # vroll, vpitch, vyaw
                   true,  true,  false]    # ax, ay, az  (ignore Z accel — gravity)
+    imu0_noise_covariance: [0.0, 0.0, 0.0,
+                            0.0, 0.0, 0.005,  # tight yaw trust from IMU
+                            0.0, 0.0, 0.0,
+                            0.0, 0.0, 0.0,
+                            0.0, 0.0, 0.0]
     imu0_differential: false
-    imu0_relative: true                   # use relative yaw changes not absolute
+    imu0_relative: true                  # use relative yaw changes not absolute
     imu0_queue_size: 10
     imu0_remove_gravitational_acceleration: true
 
