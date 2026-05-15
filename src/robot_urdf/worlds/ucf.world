@@ -25,7 +25,7 @@
     </light>
 
     <!-- Ground plane -->
-    <model name="ground_plane">
+    <!--<model name="ground_plane">
       <static>true</static>
       <link name="link">
         <collision name="collision">
@@ -63,33 +63,104 @@
           </material>
         </visual>
       </link>
-    </model>
-    
+    </model>-->
 
-    <!-- Ground Box -->
-    <!--><model name="ground_box">
+    <!-- Terrain Model-->
+    <!-- Failed HeightMap
+    <model name="terrain">
       <static>true</static>
-      <pose>0 0 -0.5 0 0 0</pose>
+      <pose>0 0 0 0 0 1.57079633</pose>
       <link name="link">
         <collision name="collision">
-          <geometry><box><size>10 10 0.5</size></box></geometry>
+          <geometry>
+            <heightmap>
+              <uri>heightmap1.png</uri>
+              <size>8.10 4.57 0.5</size>
+              <pos>0 0 0</pos>
+              <use_terrain_paging>false</use_terrain_paging>
+            </heightmap>
+            <surface>
+              <friction>
+                <ode>
+                  <mu1>0.3</mu1>      
+                  <mu2>0.3</mu2>    
+                </ode>
+              </friction>
+              <contact>
+                <ode>
+                  <kp>1e6</kp>      
+                  <kd>1.0</kd>     
+                </ode>
+              </contact>
+            </surface>
+          </geometry>
         </collision>
         <visual name="visual">
-          <geometry><box><size>10 10 0.5</size></box></geometry>
+          <geometry>
+            <heightmap>
+              <uri>heightmap1.png</uri>
+              <size>8.10 4.57 0.5</size>
+              <pos>0 0 0</pos>
+              <use_terrain_paging>false</use_terrain_paging>
+            </heightmap>
+          </geometry>
           <material>
-            <ambient>0.3 0.3 0.8 1</ambient>
-            <diffuse>0.4 0.4 0.9 1</diffuse>
+            <ambient>0.4 0.4 0.4 1</ambient>
+            <diffuse>0.6 0.6 0.6 1</diffuse>
           </material>
         </visual>
       </link>
-    </model><-->
+    </model>
+    -->
+    <!-- Dae-based terrain-->
+    <model name="terrain">
+      <static>true</static>
+      <pose>0 0 0 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+        <geometry>
+          <mesh>
+            <uri>landscape.dae</uri>
+          </mesh>
+        </geometry>
+        <surface>
+            <friction>
+              <ode>
+                <mu1>0.3</mu1>      
+                <mu2>0.3</mu2>    
+              </ode>
+            </friction>
+            <contact>
+              <ode>
+                <kp>1e6</kp>      
+                <kd>1.0</kd>     
+              </ode>
+            </contact>
+          </surface>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>landscape.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.4 0.4 0.4 1</ambient>
+          <diffuse>0.6 0.6 0.6 1</diffuse>
+          <specular>0 0 0 1</specular>
+          <emissive>0 0 0 1</emissive>
+          <double_sided>1</double_sided>
+        </material>
+      </visual>
+      </link>
+    </model>
 
     <!-- ================================================================== -->
     <!-- Boundary walls  (arena: 6.88 m x 5.0 m, centered at origin)        -->
     <!-- Wall thickness: 0.1 m, height: 0.5 m                               -->
     <!-- ================================================================== -->
 
-    <!-- North wall (+Y) -->
+    <!-- North wall (+Y)
     <model name="wall_north">
       <static>true</static>
       <pose>0 2.5 0.25 0 0 0</pose>
@@ -106,8 +177,9 @@
         </visual>
       </link>
     </model>
+    -->
 
-    <!-- South wall (-Y) -->
+    <!-- South wall (-Y) 
     <model name="wall_south">
       <static>true</static>
       <pose>0 -2.5 0.25 0 0 0</pose>
@@ -124,8 +196,9 @@
         </visual>
       </link>
     </model>
+    -->
 
-    <!-- East wall (+X) -->
+    <!-- East wall (+X) 
     <model name="wall_east">
       <static>true</static>
       <pose>3.44 0 0.25 0 0 0</pose>
@@ -142,8 +215,9 @@
         </visual>
       </link>
     </model>
+    -->
 
-    <!-- West wall (-X) -->
+    <!-- West wall (-X) 
     <model name="wall_west">
       <static>true</static>
       <pose>-3.44 0 0.25 0 0 0</pose>
@@ -160,6 +234,7 @@
         </visual>
       </link>
     </model>
+    -->
 
     <!-- ================================================================== -->
     <!-- Obstacles (static boxes, spread around the interior)               -->
@@ -167,7 +242,7 @@
 
     <model name="obstacle_1">
       <static>true</static>
-      <pose>1.2 0.8 0.2 0 0 0.4</pose>
+      <pose>1.2 1.8 -0.5 0 0.4 0.4</pose>
       <link name="link">
         <collision name="collision">
           <geometry><box><size>0.4 0.4 0.4</size></box></geometry>
@@ -184,7 +259,7 @@
 
     <model name="obstacle_2">
       <static>true</static>
-      <pose>-1.5 -0.9 0.25 0 0 0.9</pose>
+      <pose>-1.5 -0.9 -0.15 0 0 0.9</pose>
       <link name="link">
         <collision name="collision">
           <geometry><box><size>0.5 0.3 0.5</size></box></geometry>
@@ -201,7 +276,7 @@
 
     <model name="obstacle_3">
       <static>true</static>
-      <pose>2.1 -1.6 0.2 0 0 0.2</pose>
+      <pose>2.1 -1.6 -0.1 0 0 0.2</pose>
       <link name="link">
         <collision name="collision">
           <geometry><box><size>0.4 0.6 0.4</size></box></geometry>
@@ -218,7 +293,7 @@
 
     <model name="obstacle_4">
       <static>true</static>
-      <pose>-2.0 1.2 0.2 0 0 1.1</pose>
+      <pose>-2.0 1.2 -0.2 0 0 1.1</pose>
       <link name="link">
         <collision name="collision">
           <geometry><box><size>0.35 0.35 0.4</size></box></geometry>
@@ -235,7 +310,7 @@
 
     <model name="obstacle_5">
       <static>true</static>
-      <pose>0.3 -1.8 0.2 0 0 0.6</pose>
+      <pose>0.3 -1.8 0 0 0 0.6</pose>
       <link name="link">
         <collision name="collision">
           <geometry><box><size>0.45 0.3 0.4</size></box></geometry>
