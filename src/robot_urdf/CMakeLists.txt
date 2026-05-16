@@ -8,4 +8,9 @@ foreach(dir config launch meshes urdf worlds)
 		DESTINATION share/${PROJECT_NAME}/${dir})
 endforeach(dir)
 
+install(PROGRAMS
+  scripts/zed_noise_odom.py
+  DESTINATION lib/${PROJECT_NAME}
+)
+
 ament_package()

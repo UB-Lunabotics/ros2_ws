@@ -27,8 +27,8 @@ class ZedNoisyOdom(Node):
         super().__init__('zed_noisy_odom')
 
         # ── Parameters ──────────────────────────────────────────────────
-        self.declare_parameter('pos_noise_std',   0.00) # 0.01
-        self.declare_parameter('angle_noise_std', 0.00) #0.005
+        self.declare_parameter('pos_noise_std',   0.01) # 0.01
+        self.declare_parameter('angle_noise_std', 0.005) #0.005
         self.declare_parameter('world_frame',    'odom')
         self.declare_parameter('robot_frame',    'base_link')
         self.declare_parameter('output_topic',   '/zed/odom')
