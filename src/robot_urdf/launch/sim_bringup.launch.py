@@ -71,6 +71,19 @@ def generate_launch_description():
         }.items(),
     )
 
+    # for simulating the localization the zed2i provides
+    zed_noise = Node(
+        package='robot_urdf',
+        executable='zed_noise_odom.py',
+        name='zed_noise_odom',
+        parameters=[{
+            'use_sim_time': True,
+            'pos_noise_std':   0.01,
+            'angle_noise_std': 0.005,
+            'robot_name':      'robot',   # must match your Gazebo model name
+        }]
+    )
+
     # Spawn after a delay to give Gazebo time to fully load the world.
     # The 'create' node retries internally, but it needs the server to be
     # accepting requests — 10s is conservative but reliable.
@@ -101,7 +114,8 @@ def generate_launch_description():
         arguments=[
             "/clock@rosgraph_msgs/msg/Clock[gz.msgs.Clock",
             "/cmd_vel@geometry_msgs/msg/Twist]gz.msgs.Twist",
-            f"{WHEEL_ODOM}@nav_msgs/msg/Odometry[gz.msgs.Odometry",
+            #f"{WHEEL_ODOM}@nav_msgs/msg/Odometry[gz.msgs.Odometry",
+            #"/visual_odom@nav_msgs/msg/Odometry[ignition.msgs.Odometry",
             "/joint_states@sensor_msgs/msg/JointState[gz.msgs.Model",
             f"{RGB_TOPIC}@sensor_msgs/msg/Image[gz.msgs.Image",
             f"{DEPTH_TOPIC}@sensor_msgs/msg/Image[gz.msgs.Image",
@@ -111,6 +125,7 @@ def generate_launch_description():
             "/imu@sensor_msgs/msg/Imu[gz.msgs.IMU",
             "/tf@tf2_msgs/msg/TFMessage[gz.msgs.Pose_V",
             "/tf_static@tf2_msgs/msg/TFMessage[gz.msgs.Pose_V",
+            "/world/arena/pose/info@tf2_msgs/msg/TFMessage[ignition.msgs.Pose_V",
         ],
     )
 
@@ -222,7 +237,7 @@ def generate_launch_description():
         rsp, gazebo, bridge, rviz_node,
 
         spawn,  # delayed 10s
-        #TimerAction(period=13.0, actions=[ekf])
-        TimerAction(period=13.0, actions=[ekf, rtab_slam, rtab_loc]),
+        TimerAction(period=13.0, actions=[zed_noise])
+        #TimerAction(period=13.0, actions=[ekf, rtab_slam, rtab_loc]),
         #TimerAction(period=16.0, actions=[nav2]),
     ])

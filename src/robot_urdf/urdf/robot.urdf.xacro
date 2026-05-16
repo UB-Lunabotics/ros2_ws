@@ -93,17 +93,6 @@
   </xacro:macro>
 
   <!-- =========================================================
-       BASE FOOTPRINT
-       ========================================================= -->
-  <link name="base_footprint"/>
-
-  <joint name="base_footprint_joint" type="fixed">
-    <parent link="base_footprint"/>
-    <child  link="base_link"/>
-    <origin xyz="0 0 ${base_z}" rpy="0 0 0"/>
-  </joint>
-
-  <!-- =========================================================
        BASE LINK
        ========================================================= -->
   <link name="base_link">
@@ -235,10 +224,6 @@
     <origin xyz="0 0 0" rpy="${-pi/2} 0 ${-pi/2}"/>
   </joint>
 
-
-
-
-
   <!-- =========================================================
        GAZEBO DEPTH CAMERA SENSOR
        Publishes on same topics the parameter_bridge expects.
@@ -287,7 +272,6 @@
       <wheel_separation>0.6712</wheel_separation>
       <wheel_radius>0.1778</wheel_radius>
       <topic>cmd_vel</topic>
-      <publish_odom_tf>false</publish_odom_tf>
       <odom_topic>odom</odom_topic>
       <tf_topic>tf</tf_topic>
       <frame_id>odom</frame_id>
@@ -296,8 +280,9 @@
       <max_angular_acceleration>10.0</max_angular_acceleration>
       <max_angular_velocity>0.3</max_angular_velocity>
       <max_linear_velocity>1.0</max_linear_velocity>
-      <publish_odom>true</publish_odom>
+      <publish_odom>false</publish_odom>
       <publish_wheel_tf>false</publish_wheel_tf>
+      <publish_odom_tf>false</publish_odom_tf>
     </plugin>
   </gazebo>
 
@@ -344,6 +329,5 @@
     <plugin filename="ignition-gazebo-imu-system"
             name="ignition::gazebo::systems::Imu"/>
   </gazebo>
-
 
 </robot>
