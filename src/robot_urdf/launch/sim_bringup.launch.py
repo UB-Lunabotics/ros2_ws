@@ -28,7 +28,7 @@ INFO_TOPIC   = "/camera/color/camera_info"
 
 # Odometry topics
 WHEEL_ODOM   = "/odom"               # diff drive plugin output
-ODOM_TOPIC   = "/odometry/filtered"  # EKF output — consumed by RTAB-Map/Nav2
+ODOM_TOPIC   = "/zed/odom"  # EKF output — consumed by RTAB-Map/Nav2
 
 SCAN_TOPIC   = "/scan"
 # ---------------------------------------------------------------------------
@@ -223,7 +223,7 @@ def generate_launch_description():
     # Startup sequence
     #  t=0s   — RSP, Gazebo, bridge, RViz start immediately
     #  t=10s  — spawn robot (Gazebo world should be loaded by now)
-    #  t=13s  — EKF + RTAB-Map (odom should be flowing from diff drive plugin)
+    #  t=13s  — RTAB-Map (odom should be flowing from zed_noise node)
     #  t=16s  — Nav2 (map + odom TF should be established)
     # -------------------------------------------------------------------------
     return LaunchDescription([
@@ -237,7 +237,7 @@ def generate_launch_description():
         rsp, gazebo, bridge, rviz_node,
 
         spawn,  # delayed 10s
-        TimerAction(period=13.0, actions=[zed_noise])
-        #TimerAction(period=13.0, actions=[ekf, rtab_slam, rtab_loc]),
+        TimerAction(period=13.0, actions=[zed_noise]),
+        TimerAction(period=15.0, actions=[rtab_slam, rtab_loc]),
         #TimerAction(period=16.0, actions=[nav2]),
     ])

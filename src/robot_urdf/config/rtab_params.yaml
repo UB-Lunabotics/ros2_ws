@@ -17,7 +17,7 @@ rtabmap:
     map_frame_id:    map
 
     # RTAB-Map publishes map->odom only.
-    # EKF owns odom->base_link — do NOT let RTAB-Map publish that.
+    # Zed_noise owns odom->base_link — do NOT let RTAB-Map publish that.
     publish_tf:      true        # map->odom TF
     tf_delay:        0.05
     tf_tolerance:    0.1
@@ -48,7 +48,7 @@ rtabmap:
     # -------------------------------------------------------------------------
     # Detection / timing
     # -------------------------------------------------------------------------
-    Rtabmap/DetectionRate: "1"    # Hz — 1 is plenty for mapping, saves CPU
+    Rtabmap/DetectionRate: "2"    # Hz — 1 is plenty for mapping, saves CPU
     Rtabmap/TimeThr:       "0"    # no per-iteration time limit
 
     # -------------------------------------------------------------------------
@@ -56,7 +56,7 @@ rtabmap:
     # -------------------------------------------------------------------------
     Mem/IncrementalMemory:     "true"   # SLAM mode (false = localization only)
     Mem/InitWMWithAllNodes:    "false"
-    Mem/STMSize:               "30"     # short-term memory window
+    Mem/STMSize:               "20"     # short-term memory window
     Mem/RehearsalSimilarity:   "0.45"
     Mem/BadSignaturesIgnored:  "true"
 
@@ -66,10 +66,10 @@ rtabmap:
     # -------------------------------------------------------------------------
     Rtabmap/LoopRatio:                  "0"
     RGBD/LoopClosureReactivation:       "true"
-    RGBD/MaxLoopClosureDistance:        "10.0"  # was 0 (unlimited) — risky without visual odom
+    RGBD/MaxLoopClosureDistance:        "6.0"  # was 0 (unlimited) — risky without visual odom
 
     # Local loop closure (nearby graph nodes)
-    RGBD/LocalRadius:               "5.0"       # metres
+    RGBD/LocalRadius:               "4.0"       # metres
     RGBD/LocalImmunizationRatio:    "0.5"
 
     # Proximity detection (space-based loop closure)
@@ -86,7 +86,12 @@ rtabmap:
     Grid/ClusterRadius:       "0.1"
     Grid/GroundIsObstacle:    "false"
     Grid/NormalsSegmentation: "false"  # flat sim ground, skip normal estimation
-    Grid/FootprintRadius:     "0.45"   # robot inscribed radius, clears self-hits
+    Grid/FootprintRadius:     "0.55"   # robot inscribed radius, clears self-hits
+    Grid/MaxObstacleHeight:    "0.5"    # cap at 50cm — rocks are 30-40cm,
+                                       # prevents ceiling/noise hits inflating grid
+    Grid/MinClusterSize:       "5"      # ignore single-cell noise from depth camera
+    Grid/RayTracing:           "true"   # better free-space carving around craters
+    Grid/RangeMin:             "0.3"    # ensures rocks right in front register
 
     # -------------------------------------------------------------------------
     # 3D point cloud map (RViz visualisation)

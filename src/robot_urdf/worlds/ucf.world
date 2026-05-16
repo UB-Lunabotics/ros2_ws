@@ -117,17 +117,40 @@
       <static>true</static>
       <pose>0 0 0 0 0 0</pose>
       <link name="link">
+        <visual name="visual">
+          <geometry>
+            <mesh>
+              <uri>landscape.dae</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0.4 0.4 0.4 1</ambient>
+            <diffuse>0.6 0.6 0.6 1</diffuse>
+            <specular>0 0 0 1</specular>
+            <emissive>0 0 0 1</emissive>
+            <double_sided>1</double_sided>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="terrain_collision"> <!--Dont ask-->
+      <static>true</static>
+      <pose>0 0 -1.84 0 0 0</pose>
+      <link name="link">
         <collision name="collision">
         <geometry>
-          <mesh>
-            <uri>landscape.dae</uri>
-          </mesh>
+          <heightmap>
+            <uri>heightmap.png</uri>
+            <size>20.0000 20.0000 1.8272</size>
+            <pos>0 0 -2.249</pos>
+          </heightmap>
         </geometry>
         <surface>
             <friction>
               <ode>
-                <mu1>0.3</mu1>      
-                <mu2>0.3</mu2>    
+                <mu1>0.8</mu1>      
+                <mu2>0.8</mu2>    
               </ode>
             </friction>
             <contact>
@@ -138,20 +161,6 @@
             </contact>
           </surface>
       </collision>
-      <visual name="visual">
-        <geometry>
-          <mesh>
-            <uri>landscape.dae</uri>
-          </mesh>
-        </geometry>
-        <material>
-          <ambient>0.4 0.4 0.4 1</ambient>
-          <diffuse>0.6 0.6 0.6 1</diffuse>
-          <specular>0 0 0 1</specular>
-          <emissive>0 0 0 1</emissive>
-          <double_sided>1</double_sided>
-        </material>
-      </visual>
       </link>
     </model>
 
